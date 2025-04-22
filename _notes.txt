@@ -1,0 +1,56 @@
+NOTES
+=====
+
+
+TODO 
+----
+- add employee table
+* Employee(id (PK, auto), name, surname, role?, start_date, phone_num, email_address? address?, salary?)
+
+- inject final version of ERD to readme file?
+- add a 'cancel' / 'go back' button when creating a reservation or employee, and a js confirmation box
+- create a .jar file for the production version
+- create a project/version_download in github once the project is complete so people can download the zipped code 
+
+- create a video-demo of the app once the alpha/beta version is complete, add the video to 
+github, or to google drive and then add the link to github, and then interview a restaurant owner/manager (prepare questions)
+about their management system(s)
+
+
+---
+
+Ideas
+-----
+- add this to the readme file in the project?
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard
+https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html
+https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree
+
+- log out button -> log out, and then re-directs to sign-in page 
+- ui designers-> work on ui, and on js code; logic for the website yeah
+- add 404 page, maybe 403 page and 405 too? 
+
+- add an option to add, edit, remove an employee, or reservation or order, if you are a manager 
+- manager pages - employees, order, tables 
+- kitchen-staff pages - orders 
+- normalise the colors 
+- reservation for a max of 2/3 hours per table 
+
+- put profile info in the form of a table? 
+- use js to inject the sidebar for all pages? 
+- remove the div for plugins in all pages? 
+- make the side bar un-scrollable most of the time
+- open certain pages in a new tab or window
+(employee-pay, employee-list, orders-only?)
+---
+
+
+Learn
+-----
+- auto rerun for tomcat server; re-fresh server when a new item is added
+-
+---
+
