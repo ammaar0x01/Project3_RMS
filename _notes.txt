@@ -10,7 +10,8 @@ TODO
 
 - add a credits page? or add this info in a metadata.json file?
 - (maybe) remove register page, because only the manager/super-user can add new employees to the system
-
+- rename 'screenshots' dir to 'media', add the ERD and class-diagram there eventually for the readme file 
+ 
 
 - add menu, and menu items, and categories (UI and table)
 - redesign the sign in page
