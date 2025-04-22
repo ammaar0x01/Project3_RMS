@@ -1,18 +1,18 @@
-## Program: 	RMS, Restaurant-management System 
+## Program: RMS (Restaurant-management System)
 - Started	18.04.25
 - Updated: 	22.04.25	
 - Status: 	work-in-progress
-- branch: 	MASTER	
-```
-Devs
-----
-- ammaar0x01
-```
+- branch: 	trpl_A
+- Developer: 	ammaar0x01
 ---
 
 ### Pre-requisites 
-- Knowledge of the IntelliJ IDE
+- Should have Java installed (Version 21 used for this project)
+- Should have IntelliJ installed 
+- Should have MysQL Workbench installed 
+
 - Knowledge of Java-code
+- Knowledge of the IntelliJ IDE
 - Basic knowledge of Spring-boot code
 - Have Java installed as an environment variable (this is used when running a JAR file)
 ---
@@ -71,14 +71,13 @@ Batch file
 ### Screenshots 
 ![Screenshot 2025-04-22 065921.png](screenshots%2FScreenshot%202025-04-22%20065921.png)
 
-![Screenshot 2025-04-22 065921.png](screenshots%2FScreenshot%202025-04-22%20065921.png)
+![Screenshot 2025-04-22 065929.png](screenshots%2FScreenshot%202025-04-22%20065929.png)
 
-![Screenshot 2025-04-22 065921.png](screenshots%2FScreenshot%202025-04-22%20065921.png)
+![Screenshot 2025-04-22 065935.png](screenshots%2FScreenshot%202025-04-22%20065935.png)
+
+![Screenshot 2025-04-22 065941.png](screenshots%2FScreenshot%202025-04-22%20065941.png)
 ---
 
-### Video demo 
-- sa 
----
 
 ### Convert to JAR file (in IntelliJ)
 1. Navigate to the pom.xml file 

@@ -1,13 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-  <title>RMS - Employee, Add new employee</title>
+  <title>RMS - Employee, Add a new employee</title>
 
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -100,12 +100,32 @@ backdrop-filter: blur(7px);
             </div> -->
 
             <div class="card-body">
-              <form role="form text-left">
+              <form role="form text-left" method="POST"
+                    th:object="${employee1DTO}">
+<!--                <form method="POST" enctype="multipart/form-data" th:object="${productDTO}">-->
+
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="First name(s)" aria-label="Name" aria-describedby="email-addon">
+<!--                  <input type="text" class="form-control" placeholder="First name(s)" aria-label="Name" aria-describedby="email-addon">-->
+
+                  <input class="form-control"
+                         th:field="${employee1DTO.empFirstName}"
+                         placeholder="first name(s)">
+                  <p th:if="${#fields.hasErrors('empFirstName')}"
+                     th:errorclass="text-danger"
+                     th:errors="${employee1DTO.empFirstName}">
+                  </p>
                 </div>
+
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Last name" aria-label="Name" aria-describedby="email-addon">
+<!--                  <input type="text" class="form-control" placeholder="Last name" aria-label="Name" aria-describedby="email-addon">-->
+
+                  <input class="form-control"
+                         th:field="${employee1DTO.empLastName}"
+                         placeholder="first name(s)">
+                  <p th:if="${#fields.hasErrors('empLastName')}"
+                     th:errorclass="text-danger"
+                     th:errors="${employee1DTO.empLastName}">
+                  </p>
                 </div>
 
 
@@ -118,13 +138,29 @@ backdrop-filter: blur(7px);
 
                 <label class="text-light lead">Role</label>
                 <div class="mb-3">
-                  <select class="form-select">
-                    <option selected>Open this select menu</option>
-                    <option value="manager">Manager</option>
-                    <option value="kitchen-waiter">Kitchen-staff or Waiter</option>
+<!--                  <select class="form-select">-->
+<!--                    <option selected>Open this select menu</option>-->
+<!--                    <option value="manager">Manager</option>-->
+<!--                    <option value="kitchen-waiter">Kitchen-staff or Waiter</option>-->
+<!--                  </select>-->
+
+
+                  <select class="form-select" th:field="${employee1DTO.role}">
+<!--                    <option value="" disabled selected>Open this select menu</option>&ndash;&gt;-->
+
+<!--                      <option value="kitchen-waiter">Kitchen-staff or Waiter</option>-->
+                      <option value="kitchen-waiter">Kitchen-staff member</option>
+                      <option value="kitchen-waiter">Waiter</option>
+                      <option value="manager">Manager</option>
                   </select>
+
+                  <p th:if="${#fields.hasErrors('role')}"
+                     th:errorclass="text-danger"
+                     th:errors="${employee1DTO.role}">
+                  </p>
+
                 </div>
-            
+
 
                 <!-- <div class="mb-3">
                   <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon">
@@ -137,12 +173,22 @@ backdrop-filter: blur(7px);
                   </label>
                 </div> -->
 
-                <div class="text-center">
-                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Add employee</button>
+<!--                button -->
+<!--                <div class="text-center">-->
+<!--                  <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Add employee</button>-->
+<!--                </div>-->
+
+                <div class="row mb-3">
+                  <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Add Employee</button>
+                  </div>
+
+                  <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" href="/employees"
+                       role="button">Cancel</a>
+                  </div>
                 </div>
-                <!-- <p class="text-sm mt-3 mb-0">Already have an account? 
-                  <a href="./sign-in.html" class="text-dark font-weight-bolder">Sign in</a>
-                </p> -->
+
               </form>
 
             </div>

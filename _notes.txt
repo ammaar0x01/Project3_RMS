@@ -6,6 +6,15 @@ TODO
 ----
 - add employee table
 * Employee(id (PK, auto), name, surname, role?, start_date, phone_num, email_address? address?, salary?)
+- once employee is added, display a message saying that the new employee/ order/ reservation was saved successfully
+
+- add a credits page? or add this info in a metadata.json file?
+- (maybe) remove register page, because only the manager/super-user can add new employees to the system
+
+
+- add menu, and menu items, and categories (UI and table)
+- redesign the sign in page
+- create a seperate controller for each entity, example EmployeeController, etc..
 
 - inject final version of ERD to readme file?
 - add a 'cancel' / 'go back' button when creating a reservation or employee, and a js confirmation box
@@ -15,9 +24,21 @@ TODO
 - create a video-demo of the app once the alpha/beta version is complete, add the video to 
 github, or to google drive and then add the link to github, and then interview a restaurant owner/manager (prepare questions)
 about their management system(s)
+(get a client)
 
 
+
+UI devs
+- modify 404
+- connect database data to UI
+--
+
+Database devs
+- add the other tables to the database and connect to UI
+-
+--
 ---
+
 
 Ideas
 -----
@@ -45,6 +66,9 @@ https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree
 - make the side bar un-scrollable most of the time
 - open certain pages in a new tab or window
 (employee-pay, employee-list, orders-only?)
+
+- later, add images of the employee to the employee list, and menu list?
+-
 ---
 
 
@@ -52,5 +76,17 @@ Learn
 -----
 - auto rerun for tomcat server; re-fresh server when a new item is added
 -
+-
 ---
 
+
+Learnt
+------
+- DTO - Data Transfer Object
+-
+User submits form (uses ProductDTO)
+You validate it and convert it into a Product entity (Product)
+Save it with a ProductRepository.save(product)
+
+-
+---

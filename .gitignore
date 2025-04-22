@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### Mine
+_temp
+_trash
+_notes.txt
+src/main/resources/application.properties
