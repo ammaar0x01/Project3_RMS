@@ -1,12 +1,13 @@
 ## Program: RMS (Restaurant-management System)
 - Started	18.04.25
-- Updated: 	22.04.25	
+- Updated: 	25.04.25	
 - Status: 	work-in-progress
 - branch: 	trpl_A
 - Developer: 	ammaar0x01
 ---
 
 ### Pre-requisites 
+```
 - Should have Java installed (Version 21 used for this project)
 - Should have IntelliJ installed 
 - Should have MysQL Workbench installed 
@@ -15,6 +16,7 @@
 - Knowledge of the IntelliJ IDE
 - Basic knowledge of Spring-boot code
 - Have Java installed as an environment variable (this is used when running a JAR file)
+```
 ---
 
 
@@ -53,6 +55,7 @@ Batch file
 
 
 ### Dependencies used (using the spring-initializer tool)
+```
 - Spring Web
 - Thymeleaf
 - Lombok
@@ -65,13 +68,11 @@ Batch file
 - spring-boot-devtools
 - mysql-connector-j
 - spring-boot-starter-test ?
+``` 
 ---
 
 
-### Screenshots 
-![Screenshot 2025-04-22 065921.png](screenshots%2FScreenshot%202025-04-22%20065921.png)
-
-![Screenshot 2025-04-22 065929.png](screenshots%2FScreenshot%202025-04-22%20065929.png)
+### Screenshots
 
 ![Screenshot 2025-04-22 065935.png](screenshots%2FScreenshot%202025-04-22%20065935.png)
 

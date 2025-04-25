@@ -31,61 +31,30 @@ public class MainController {
     public String signIn(){
         return "sign-in";
     }
-    @RequestMapping("/sign-in")
-    public String signIn1(){
-        return "sign-in";
-    }
+//    @RequestMapping("/sign-in")
+//    public String signIn1(){
+//        return "sign-in";
+//    }
 
-    @RequestMapping("/sign-up")
-    public String signUp(){
-        return "sign-up";
-    }
-
-    // @RequestMapping("/dashboard-home")
     @RequestMapping("/dashboard")
     public String dashboard(){
         return "dashboard";
-    }
-
-    // @RequestMapping("/dashboard-employees")
-    @RequestMapping("/employees")
-    public String employees(){
-        return "employee/employees";
-    }
-
-    @RequestMapping("/orders")
-    public String orders(){
-        return "order/orders";
-    }
-
-    @RequestMapping("/reservations")
-    public String reservations(){
-        return "reservation/reservations";
     }
 
     @RequestMapping("/profile")
     public String profile(){
         return "profile";
     }
-    // ----------------------------------------
+    // **************************
 
-    @RequestMapping("/orders-only")
-    public String ordersOnly(){
-        return "order/orders-only";
+
+    // EMPLOYEE
+    // @RequestMapping("/dashboard-employees")
+    @RequestMapping("/employees")
+    public String employees(){
+        return "employee/employees";
     }
 
-//    @GetMapping({"", "/"})
-//    public String showProductList(Model model){
-////         List<Product> products = pRepo.findAll();
-//
-//        // reverse order
-//        List<Product> products = pRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
-//
-//
-//        model.addAttribute("products", products);
-//        return "products/index";
-//    }
-//
 //    @RequestMapping("/employees-list")
     @GetMapping("/employees-list")
     public String employeesList(Model model){
@@ -97,22 +66,6 @@ public class MainController {
         model.addAttribute("employees", employees);
         return "employee/employees-list";
     }
-//    @RequestMapping("/employees-list1")
-//    public String employeesList1(){
-//        return "employees-list-old";
-//    }
-
-    @RequestMapping("/employees-pay")
-    public String employeesPay(){
-        return "employee/employees-pay";
-    }
-    @RequestMapping("/employees-pay1")
-    public String employeesPay1(){
-        return "employee/employees-pay1";
-    }
-
-
-
 
     @RequestMapping("/employees-add")
     public String employeeAdd(Model model){
@@ -122,8 +75,8 @@ public class MainController {
     }
     @PostMapping("/employees-add")
     public String createEmployee(
-        @Valid @ModelAttribute Employee1DTO eDTO,
-        BindingResult result
+            @Valid @ModelAttribute Employee1DTO eDTO,
+            BindingResult result
     ){
         // checking for errors from the form
         if (result.hasErrors()) {
@@ -135,10 +88,10 @@ public class MainController {
 
         // creating the object
         Employee1 emp = new Employee1(
-            eDTO.getEmpFirstName(),
-            eDTO.getEmpLastName(),
-            currentDate,
-            eDTO.getRole()
+                eDTO.getEmpFirstName(),
+                eDTO.getEmpLastName(),
+                currentDate,
+                eDTO.getRole()
         );
 
         // saving to database
@@ -148,17 +101,71 @@ public class MainController {
         // re-directing
         return "redirect:/employees";
     }
-    // ---
 
-    @RequestMapping("/employees-add1")
-    public String employeeAdd1(){
-        return "employee/employees-add1";
+    @RequestMapping("/employees-pay")
+    public String employeesPay(){
+        return "employee/employees-pay";
+    }
+    // **************************
+
+
+    // ORDER
+    @RequestMapping("/orders")
+    public String orders(){
+        return "order/orders";
+    }
+
+    @RequestMapping("/orders-add")
+    public String ordersAdd(){
+        return "order/orders-add";
+    }
+
+    // primarily for waiters and kitchen-staff
+    @RequestMapping("/orders-only")
+    public String ordersOnly(){
+        return "order/orders-only";
+    }
+
+    @RequestMapping("/orders-only-add")
+    public String ordersOnyAdd(){
+        return "order/orders-only-add";
+    }
+
+    // TODO - add a route for a specific order
+    // ...
+
+
+    // **************************
+
+
+    // RESERVATION
+    @RequestMapping("/reservations")
+    public String reservations(){
+        return "reservation/reservations";
     }
 
     @RequestMapping("/reservations-add")
     public String reservationAdd(){
         return "reservation/reservations-add";
     }
+    // **************************
+
+    // MENU
+    @RequestMapping("/menu")
+    public String menu(){
+        return "menu/menu";
+    }
+
+    @RequestMapping("/menu-add")
+    public String menuAdd(){
+        return "menu/menu-add";
+    }
+    // **************************
+
+
+    // ----------------------------------------
+
+    // more ...
     // ----------------------------------------
 
 }

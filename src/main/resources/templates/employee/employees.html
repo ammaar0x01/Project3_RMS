@@ -32,7 +32,7 @@
   </div>
   <hr class="horizontal dark mt-0">
   
-  <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+  <div class="collapse navbar-collapse w-auto max-height-vh-100" id="sidenav-collapse-main">
       <ul class="navbar-nav">
       <li class="nav-item">
           <a class="nav-link " href="dashboard">
@@ -153,8 +153,8 @@
   </aside>
 
   <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" 
+
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
     id="navbarBlur" 
     navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
@@ -203,9 +203,9 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
                       <th class="text-secondary opacity-7"></th>
                       <th class="text-secondary opacity-7"></th>
-
                     </tr>
                   </thead>
+
                   <tbody>
                     <tr>
                       <td>
@@ -268,36 +268,13 @@
                           Edit
                         </a>
                       </td>
+                        <td class="align-middle">
+                            <a href="javascript:;" class="text-danger font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                Remove
+                            </a>
+                        </td>
                     </tr>
-                    
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user3">
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                            <p class="text-xs text-secondary mb-0">laurent@creative-tim.com</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">Executive</p>
-                        <p class="text-xs text-secondary mb-0">Projects</p>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-success">Online</span>
-                      </td>
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td>
-                    </tr>
+
                   </tbody>
                 </table>
               </div>
@@ -321,7 +298,7 @@
       <div class="row">
         <div class="col-12">
           <div class="sidenav-footer mx-3 col-12 col-md-6">
-            <a class="btn bg-gradient-warning mt-4 w-50"
+            <a class="btn bg-gradient-warning mt-2 w-50"
             href="./employees-add"
             type="button">
                 Add a new employee
@@ -334,8 +311,6 @@
     </div>
   </main>
 
-
- 
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
@@ -350,15 +325,6 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-
-    <!-- MY SCRIPTS -->
-    <!-- <script src="../loadSidenavbar.js"></script> -->
-    <!-- <script src="../loadNavbar.js"></script> -->
-    <script src="../loadNavbarAll.js"></script>
 
 </body>
 
