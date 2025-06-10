@@ -21,10 +21,6 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>
-
-    <!-- STYLES  -->
-    <link rel="stylesheet" href="../css/main.css">
-
 </head>
 
 <body class="g-sidenav-show bg-gray-100" onload="">
@@ -238,37 +234,121 @@
                                 </tr>
                                 </thead>
 
-
                                 <tbody>
+<!--                                <tr>-->
+<!--                                    <td>-->
+<!--                                        <div class="d-flex px-2 py-1">-->
+<!--                                            <div>-->
+<!--                                                <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3"-->
+<!--                                                     alt="user1">-->
+<!--                                            </div>-->
+<!--                                            <div class="d-flex flex-column justify-content-center">-->
+<!--                                                <h6 class="mb-0 text-sm">John Michael</h6>-->
+<!--                                                <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <p class="text-xs font-weight-bold mb-0">Manager</p>-->
+<!--                                        <p class="text-xs text-secondary mb-0">Organization</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle text-center text-sm">-->
+<!--                                        <span class="badge badge-sm bg-gradient-success">Working</span>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle text-center">-->
+<!--                                        <span class="text-secondary text-xs font-weight-bold">23/04/18</span>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle">-->
+<!--                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"-->
+<!--                                           data-toggle="tooltip" data-original-title="Edit user">-->
+<!--                                            Edit-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle">-->
+<!--                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"-->
+<!--                                           data-toggle="tooltip" data-original-title="Edit user">-->
+<!--                                            Remove-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+<!--                                </tr>-->
+
+<!--                                <tr>-->
+<!--                                    <td>-->
+<!--                                        <div class="d-flex px-2 py-1">-->
+<!--                                            <div>-->
+<!--                                                <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3"-->
+<!--                                                     alt="user2">-->
+<!--                                            </div>-->
+<!--                                            <div class="d-flex flex-column justify-content-center">-->
+<!--                                                <h6 class="mb-0 text-sm">Alexa Liras</h6>-->
+<!--                                                <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </td>-->
+<!--                                    <td>-->
+<!--                                        <p class="text-xs font-weight-bold mb-0">Programmer</p>-->
+<!--                                        <p class="text-xs text-secondary mb-0">Developer</p>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle text-center text-sm">-->
+<!--                                        <span class="badge badge-sm bg-gradient-secondary">Not working</span>-->
+<!--                                    </td>-->
+<!--                                    <td class="align-middle text-center">-->
+<!--                                        <span class="text-secondary text-xs font-weight-bold">11/01/19</span>-->
+<!--                                    </td>-->
+
+
+<!--                                    <td class="align-middle">-->
+<!--                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"-->
+<!--                                           data-toggle="tooltip" data-original-title="Edit user">-->
+<!--                                            Edit-->
+<!--                                        </a>-->
+<!--                                    </td>-->
+
+<!--                                    &lt;!&ndash;                        <td class="align-middle">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                            <a th:href="@{/products/edit(id=${product.id})}"&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                               class="text-danger font-weight-bold text-xs"&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                               data-toggle="tooltip" data-original-title="Edit user">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                Remove&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                        </td>&ndash;&gt;-->
+
+<!--                                    &lt;!&ndash;                        <td style="white-space:nowrap">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                            <a class="btn btn-secondary btn-sm" th:href="@{/edit(id=${product.id})}">Edit</a>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                            <a class="btn btn-danger btn-sm"&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                               th:href="@{/products/delete(id=${product.id})}"&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                               onclick="return confirm('Are you sure?')"&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                            >&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                Delete</a>&ndash;&gt;-->
+
+<!--                                    &lt;!&ndash;                        </td>&ndash;&gt;-->
+<!--                                </tr>-->
+
+                                <!--                   ----------------------- -->
+
                                 <tr th:each="emp : ${employees}">
-                                    <!--                      <td th:text="${emp.empId}"></td>-->
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
                                                 <img src="../assets/img/team-1.jpg" class="avatar avatar-sm me-3"
                                                      alt="user1">
                                             </div>
-                                            <div class="d-flex justify-content-center">
-                                                <!--                                            <div class="d-flex flex-column justify-content-center">-->
-                                                <!--                                                <p class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></p>-->
-                                                <h6 class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></h6>
-
-                                                <!--                                                <h6 class="mb-0 text-sm emp-name" th:text="${emp.empLastName}"></h6>-->
-                                                <!--                                                th:text="${emp.empFirstName} ${emp.empLastName}">-->
-
-                                                <!--                                                <p class="text-xs text-secondary mb-0" th:text="${emp.empStartDate}"></p>-->
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm" th:text="${emp.empFirstName}"></h6>
+                                                <p class="text-xs text-secondary mb-0" th:text="${emp.empStartDate}">
+                                                    john@creative-tim.com</p>
                                             </div>
                                         </div>
                                     </td>
 
                                     <td>
                                         <p class="text-xs font-weight-bold mb-0" th:text="${emp.role}"></p>
+                                        <!--  <p class="text-xs text-secondary mb-0">Organization</p>-->
                                     </td>
 
                                     <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${emp.empStartDate}">
-                                        </span>
+                        <span class="text-secondary text-xs font-weight-bold"
+                              th:text="${emp.empStartDate}">
+                        </span>
                                     </td>
 
                                     <td class="align-middle">

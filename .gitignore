@@ -32,8 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
-
+# new
 _temp
 _trash
 _notes.txt
 src/main/resources/application.properties
+runnable_JAR

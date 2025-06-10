@@ -1,4 +1,4 @@
 package com.restaurant.rms.models;
 
-public class EmployeeConfig {
+public class CustomerGroup {
 }

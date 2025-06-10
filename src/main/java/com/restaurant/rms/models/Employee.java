@@ -1,16 +1,49 @@
+/*
+ * Developer: Ammaar
+ * Started: 22.04.25
+ * Updated: 05.06.25
+*/
+
 package com.restaurant.rms.models;
 
+import jakarta.persistence.*;
+import jakarta.persistence.Table;
+
+import java.util.Date;
+
+@Entity
+@Table(name="EmployeeTest")
+//@Table(name="Employee_test")
+//@Table(name="Employee")
+//@Table(name="Employee1")
 public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int empId;
+//    private int id;
+
+//    @Column(columnDefinition = "TEXT")
     private String empFirstName;
     private String empLastName;
-    private String empStartDate;
-    private int empId;
+    private Date empStartDate;
+    private String role;
 
-    private Employee(EmployeeBuilder builder) {
-        this.empFirstName = builder.empFirstName;
-        this.empLastName = builder.empLastName;
-        this.empStartDate = builder.empStartDate;
-        this.empId = builder.empId;
+//    private String empContactNum;
+//    private String empEmail;
+//    private String empAddress;
+
+    public Employee(){}
+    public Employee(String empFirstName, String empLastName, Date date, String role) {
+        this.empFirstName = empFirstName;
+        this.empLastName = empLastName;
+        this.empStartDate = date;
+        this.role = role;
+    }
+    // -------------------------------------
+
+    // getters
+    public int getEmpId() {
+        return empId;
     }
 
     public String getEmpFirstName() {
@@ -21,60 +54,54 @@ public class Employee {
         return empLastName;
     }
 
-    public String getEmpStartDate() {
+    public Date getEmpStartDate() {
         return empStartDate;
     }
 
-    public int getEmpId() {
-        return empId;
+    public String getRole(){
+        return role;
+    }
+
+    // setters? for updating
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public void setEmpFirstName(String empFirstName) {
+        this.empFirstName = empFirstName;
+    }
+
+    public void setEmpLastName(String empLastName) {
+        this.empLastName = empLastName;
+    }
+
+    public void setEmpStartDate(Date empStartDate) {
+        this.empStartDate = empStartDate;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    // copying? for updating
+    public Employee copy(Employee orignalEmployee){
+        return new Employee(
+                orignalEmployee.empFirstName,
+                orignalEmployee.getEmpLastName(),
+                orignalEmployee.getEmpStartDate(),
+                orignalEmployee.getRole()
+        );
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "empFirstName='" + empFirstName + '\'' +
+        return "Employee1{" +
+                "empId=" + empId +
+                ", empFirstName='" + empFirstName + '\'' +
                 ", empLastName='" + empLastName + '\'' +
-                ", empStartDate='" + empStartDate + '\'' +
-                ", empId=" + empId +
+                ", empStartDate=" + empStartDate +
+                ", role='" + role + '\'' +
                 '}';
     }
 
-    // ----------------------------------------
-
-    public static class EmployeeBuilder{
-        private String empFirstName;
-        private String empLastName;
-        private String empStartDate;
-        private int empId;
-
-        public EmployeeBuilder(){
-
-        }
-
-        // ----------------------------------------
-
-        public EmployeeBuilder setEmpFirstName(String empFirstName) {
-            this.empFirstName = empFirstName;
-            return this;
-        }
-
-        public EmployeeBuilder setEmpLastName(String empLastName) {
-            this.empLastName = empLastName;
-            return this;
-        }
-
-        public EmployeeBuilder setEmpStartDate(String empStartDate) {
-            this.empStartDate = empStartDate;
-            return this;
-        }
-
-        public EmployeeBuilder setEmpId(int empId) {
-            this.empId = empId;
-            return this;
-        }
-
-        public Employee build(){
-            return new Employee(this);
-        }
-    }
 }

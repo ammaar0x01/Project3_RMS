@@ -1,6 +1,6 @@
 ## Program: RMS (Restaurant-management System)
 - Started	18.04.25
-- Updated: 	25.04.25	
+- Updated: 	10.06.25	
 - Status: 	work-in-progress
 - branch: 	trpl_A
 - Developer: 	ammaar0x01
@@ -20,14 +20,14 @@
 ---
 
 
-### Download the app
+### Download the program
 ```
 git clone --branch [branch name] [git https URL] 
 OR
 Download the zipped folder
 ```
 
-### Run the app
+### Run the program
 Using the IntelliJ IDE
 1. Click the run button
 2. Open the app in the browser; default ip address=localhost:8080 (http://localhost:8080)
@@ -41,6 +41,10 @@ Batch file
 - Run the batch script
 ---
 
+
+### ERD 
+![ERD_latest.jpg](_temp%2FERD_latest.jpg)
+---
 
 ### End-points/Routes
 ```
@@ -85,7 +89,7 @@ Batch file
 2. Click the 'M' (Maven) icon on the right side of the screen
 3. Open the dropdown with the name of your java project 
 4. Open the dropdown labeled 'Lifecycle'
-5. Select the package option
+5. Select the 'package' option
 6. If build is successful, the JAR file will be in the '.\target' directory 
 ---
 
@@ -97,7 +101,7 @@ Batch file
 ---
 
 
-### More help
+### More help (references)
 - https://www.geeksforgeeks.org/returning-an-html-page-from-a-restful-controller-in-spring-boot/
 - https://start.spring.io/
 - https://www.youtube.com/watch?v=YDRNMAJo0MA
