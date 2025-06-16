@@ -68,41 +68,42 @@ backdrop-filter: blur(7px);
             <h5 class="lead text-center text-light">Add a new employee</h5>
 
             <div class="card-body">
-              <form role="form text-left" method="POST"
-                    th:object="${employee1DTO}">
+              <form role="form text-left" method="POST" th:object="${employeeDTO}">
 
                 <div class="mb-3">
                   <input class="form-control"
-                         th:field="${employee1DTO.empFirstName}"
+                         th:field="${employeeDTO.empFirstName}"
                          placeholder="first name(s)">
                   <p th:if="${#fields.hasErrors('empFirstName')}"
                      th:errorclass="text-danger"
-                     th:errors="${employee1DTO.empFirstName}">
+                     th:errors="${employeeDTO.empFirstName}">
                   </p>
                 </div>
 
                 <div class="mb-3">
                   <input class="form-control"
-                         th:field="${employee1DTO.empLastName}"
+                         th:field="${employeeDTO.empLastName}"
                          placeholder="last name">
                   <p th:if="${#fields.hasErrors('empLastName')}"
                      th:errorclass="text-danger"
-                     th:errors="${employee1DTO.empLastName}">
+                     th:errors="${employeeDTO.empLastName}">
                   </p>
                 </div>
 
+                <div class="mb-3">
+<!--                  <input type="number" class="form-control" placeholder="Phone number" aria-label="Email" aria-describedby="email-addon">-->
+                  <input type="tel" class="form-control" placeholder="Phone number" th:field="${employeeDTO.empContactNum}">
+                </div>
 
                 <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Email address" aria-label="Email" aria-describedby="email-addon">
-                </div>
-                <div class="mb-3">
-                  <input type="number" class="form-control" placeholder="Phone number" aria-label="Email" aria-describedby="email-addon">
-<!--                  <input type="tel" class="form-control" placeholder="Phone number" aria-label="Email" aria-describedby="email-addon">-->
+                  <input type="email" class="form-control" placeholder="Email address"
+                         aria-label="Email" aria-describedby="email-addon"
+                         th:field="${employeeDTO.empEmail}">
                 </div>
 
                 <label class="text-light lead">Role</label>
                 <div class="mb-3">
-                  <select class="form-select" th:field="${employee1DTO.role}">
+                  <select class="form-select" th:field="${employeeDTO.role}">
                       <option value="Kitchen-staff">Kitchen-staff member</option>
                       <option value="Waiter">Waiter</option>
                       <option value="Manager">Manager</option>
@@ -110,7 +111,7 @@ backdrop-filter: blur(7px);
 
                   <p th:if="${#fields.hasErrors('role')}"
                      th:errorclass="text-danger"
-                     th:errors="${employee1DTO.role}">
+                     th:errors="${employeeDTO.role}">
                   </p>
                 </div>
 

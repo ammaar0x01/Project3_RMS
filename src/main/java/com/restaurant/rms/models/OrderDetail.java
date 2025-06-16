@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 //@Entity // ?
-@Table(name="OrderDetail")
+//@Table(name="OrderDetail")
 public class OrderDetail {
     // composite PK
     // orderId, menuItemId

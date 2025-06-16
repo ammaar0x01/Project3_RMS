@@ -16,6 +16,12 @@ public class EmployeeDTO {
 
     @NotEmpty(message="Field cannot be empty")
     private String role;
+
+    @NotEmpty
+    private String empContactNum;
+
+    @NotEmpty
+    private String empEmail;
     // --------------------------------
 
     // setters and getters
@@ -39,11 +45,32 @@ public class EmployeeDTO {
         return empStartDate;
     }
 
+
+    public void setEmpStartDate(Date empStartDate) {
+        this.empStartDate = empStartDate;
+    }
+
     public @NotEmpty(message = "Field cannot be empty") String getRole() {
         return role;
     }
 
     public void setRole(@NotEmpty(message = "Field cannot be empty") String role) {
         this.role = role;
+    }
+
+    public @NotEmpty String getEmpContactNum() {
+        return empContactNum;
+    }
+
+    public void setEmpContactNum(@NotEmpty String empContactNum) {
+        this.empContactNum = empContactNum;
+    }
+
+    public @NotEmpty String getEmpEmail() {
+        return empEmail;
+    }
+
+    public void setEmpEmail(@NotEmpty String empEmail) {
+        this.empEmail = empEmail;
     }
 }

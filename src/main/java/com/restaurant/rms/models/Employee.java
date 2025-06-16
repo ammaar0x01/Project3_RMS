@@ -28,9 +28,11 @@ public class Employee {
     private Date empStartDate;
     private String role;
 
-//    private String empContactNum;
-//    private String empEmail;
-//    private String empAddress;
+
+
+    private String empContactNum;
+    private String empEmail;
+    private String empAddress; // ?
 
     public Employee(){}
     public Employee(String empFirstName, String empLastName, Date date, String role) {
@@ -38,6 +40,17 @@ public class Employee {
         this.empLastName = empLastName;
         this.empStartDate = date;
         this.role = role;
+    }
+    public Employee(
+            String empFirstName, String empLastName, Date empStartDate, String role,
+            String empContactNum, String empEmail
+    ) {
+        this.empFirstName = empFirstName;
+        this.empLastName = empLastName;
+        this.empStartDate = empStartDate;
+        this.role = role;
+        this.empContactNum = empContactNum;
+        this.empEmail = empEmail;
     }
     // -------------------------------------
 
@@ -61,6 +74,32 @@ public class Employee {
     public String getRole(){
         return role;
     }
+
+
+    public String getEmpContactNum() {
+        return empContactNum;
+    }
+
+    public void setEmpContactNum(String empContactNum) {
+        this.empContactNum = empContactNum;
+    }
+
+    public String getEmpEmail() {
+        return empEmail;
+    }
+
+    public void setEmpEmail(String empEmail) {
+        this.empEmail = empEmail;
+    }
+
+    public String getEmpAddress() {
+        return empAddress;
+    }
+
+    public void setEmpAddress(String empAddress) {
+        this.empAddress = empAddress;
+    }
+
 
     // setters? for updating
     public void setEmpId(int empId) {
