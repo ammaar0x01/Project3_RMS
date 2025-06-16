@@ -1,8 +1,18 @@
-## Program: RMS (Restaurant-management System)
+### Program: 
+**RMS (Restaurant-management System)**
+- Description: A web-app for managing a restaurant
+- Tech-stack
+    + Java 21 (Spring Boot)
+    + SQL (MySQL work bench)
+    + HTML
+    + CSS
+    + JS
+--- 
+
 - Started	18.04.25
-- Updated: 	10.06.25	
+- Updated: 	10.06.25
 - Status: 	work-in-progress
-- branch: 	trpl_A
+- Branch: 	trpl_A
 - Developer: 	ammaar0x01
 ---
 
@@ -37,26 +47,14 @@ JAR file
 2. Run `java -jar [JAR file]`
 3. Open the app in the browser; default ip address=localhost:8080 (http://localhost:8080)
 
-Batch file
-- Run the batch script
+OR 
+<br >
+Run the batch script to run the JAR file
 ---
-
 
 ### ERD 
-![ERD_latest.jpg](_temp%2FERD_latest.jpg)
+![ERD.jpg](ERD.jpg)
 ---
-
-### End-points/Routes
-```
-[
-/, /{undefined-route}, 
-/sign-up, /sign-in, 
-/dashboard, /employees, /orders, /reservations, /profile,
-/orders-only, /employees-list 
-]
-```
----
-
 
 ### Dependencies used (using the spring-initializer tool)
 ```

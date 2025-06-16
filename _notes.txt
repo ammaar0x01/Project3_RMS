@@ -13,12 +13,36 @@ or maybe delete sensitive info like email, address, etc..., but keep the basic i
 phone number?
 
 - do we need to use a DTO?
+- maybe upload a zipped folder of the jar file with necessary other files to my google drive or one drive account, and
+then add it to the readme.md file
 -
+---
+
+
+### End-points/Routes
+```
+[
+/,
+/{undefined-route},
+# /sign-up,
+/sign-in,
+/dashboard,
+/employees,
+/orders,
+/menu,
+/reservations,
+/profile, # for manager and owners, not employee; its unnecessary
+
+/orders-only,
+/employees-list # /employees-only?
+]
+```
 ---
 
 TODO 
 ----
-- work on reservation section
+- clean up code; create new branch; st id; tell others to start working and use my code as a ref
+
 - work on menu section
 - work on create account page
 - add screenshots of sign in, add employee to readme; push to github? back up files on SSD?
@@ -42,6 +66,7 @@ TODO
 
 
 - create a .jar file for the production version
+- deploy the app to the web? with a remote mysql database?
 - create a project/version_download in github once the project is complete so people can download the zipped code 
 
 - create a video-demo of the app once the alpha/beta version is complete, add the video to 
