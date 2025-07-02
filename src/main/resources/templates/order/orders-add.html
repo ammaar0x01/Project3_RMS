@@ -20,28 +20,10 @@
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>
 
     <!-- ------------------------------ -->
+    <link rel="stylesheet" href="../css/add-section.css">
+
     <style>
-        /* .page-header{
-          margin:0 !important;
-          border-radius: 0px;
-        } */
 
-        section{
-          overflow: hidden;
-          /* background-color: red; */
-          background-color: rgba(93, 0, 136, 0.808);
-          background-blend-mode: multiply;
-
-          background-image: url('../assets/img/curved-images/curved14.jpg');
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-        }
-
-        section .card{
-          border-radius: 20px;
-        }
     </style>
 </head>
 
@@ -62,7 +44,7 @@
                 <div class="card-body">
 <!--                    <form role="form text-left" method="POST">-->
                         <form role="form text-left" method="POST" th:object="${orderDTO}">
-
+                            <label>Estimated wait-time</label>
                             <div class="mb-3">
                                 <input class="form-control"
                                        type="number"
@@ -71,7 +53,7 @@
 
                             </div>
 
-
+                            <label>Total Price</label>
                             <div class="mb-3">
                                 <input class="form-control"
                                        type="number"
@@ -82,31 +64,35 @@
                             </div>
 
 
+<!--                            <div class="mb-3">-->
+<!--                                <input class="form-control"-->
+<!--                                       th:field="${orderDTO.status}"-->
+<!--                                       placeholder="Status">-->
+
+<!--                            </div>-->
+
+                            <label>Order status</label>
+<!--                            <label class="text-light lead">Order status</label>-->
                             <div class="mb-3">
-                                <input class="form-control"
-                                       th:field="${orderDTO.status}"
-                                       placeholder="Status">
+                                <select class="form-select" th:field="${orderDTO.status}">
+                                    <option value="Not-started">Not-started</option>
+                                    <option value="In-progress">In-progress</option>
+                                    <option value="Complete">Complete</option>
+                                </select>
 
-                            </div>
-
-                            <label class="text-light lead">Order status</label>
-                            <div class="mb-3">
-<!--                                <select class="form-select" th:field="${orderDTO.status}">-->
-<!--                                    <option value="Kitchen-staff">Kitchen-staff member</option>-->
-<!--                                    <option value="Waiter">Waiter</option>-->
-<!--                                    <option value="Manager">Manager</option>-->
-<!--                                </select>-->
-
-<!--                                <p th:if="${#fields.hasErrors('role')}"-->
-<!--                                   th:errorclass="text-danger"-->
-<!--                                   th:errors="${employeeDTO.role}">-->
-<!--                                </p>-->
+                                <p th:if="${#fields.hasErrors('status')}"
+                                   th:errorclass="text-danger"
+                                   th:errors="${orderDTO.status}">
+                                </p>
                             </div>
 
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Order details</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea
+                                    class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    placeholder="Example, \n- Item #12, x1"
+                            ></textarea>
                         </div>
 
 
@@ -115,6 +101,7 @@
                             <input type="text" class="form-control" placeholder="Table number(s)">
                         </div>
 
+                        <!-- buttons -->
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">
                                 Create order

@@ -30,7 +30,7 @@
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
          navbar-scroll="true">
         <div class="container-fluid py-1 px-3">
-            <h5 class="pt-3 display-6 text-primary">Employees</h5>
+            <h5 class="pt-3 display-6 text-primary">Employees List</h5>
         </div>
     </nav>
 
@@ -41,9 +41,7 @@
                     <div class="card-header pb-0">
                         <h6>All Employees</h6>
 
-                        <p>Number of employees: <span th:text="${employees.size()}">26</span></p>
-<!--                        <h6 class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></h6>-->
-
+                        <p>Number of employees: <span th:text="${employees.size()}">None</span></p>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -66,7 +64,6 @@
 
                                 <tbody>
                                 <tr th:each="emp : ${employees}">
-                                    <!--                      <td th:text="${emp.empId}"></td>-->
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
@@ -74,14 +71,8 @@
                                                      alt="user1">
                                             </div>
                                             <div class="d-flex justify-content-center">
-<!--                                            <div class="d-flex flex-column justify-content-center">-->
-<!--                                                <p class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></p>-->
                                                 <h6 class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></h6>
 
-<!--                                                <h6 class="mb-0 text-sm emp-name" th:text="${emp.empLastName}"></h6>-->
-<!--                                                th:text="${emp.empFirstName} ${emp.empLastName}">-->
-
-<!--                                                <p class="text-xs text-secondary mb-0" th:text="${emp.empStartDate}"></p>-->
                                             </div>
                                         </div>
                                     </td>
@@ -98,7 +89,7 @@
 
                                     <td class="align-middle">
                                         <a
-                                                th:href="@{/edit(id=${emp.empId})}"
+                                                th:href="@{employees/edit(id=${emp.id})}"
                                                 class="text-info font-weight-bold text-xs"
                                                 data-toggle="tooltip"
                                                 data-original-title="Edit user">
@@ -106,9 +97,10 @@
                                         </a>
                                     </td>
 
+
                                     <td class="align-middle">
                                         <a
-                                                th:href="@{/delete(id=${emp.empId})}"
+                                                th:href="@{employees/delete(id=${emp.id})}"
                                                 class="text-danger font-weight-bold text-xs"
                                                 data-toggle="tooltip"
                                                 onclick="return confirm('Are you sure?')"

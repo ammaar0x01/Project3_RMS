@@ -27,7 +27,7 @@
 
 </head>
 
-<body class="g-sidenav-show bg-gray-100" onload="">
+<body class="g-sidenav-show bg-gray-100">
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
        id="sidenav-main">
     <div class="sidenav-header">
@@ -241,7 +241,6 @@
 
                                 <tbody>
                                 <tr th:each="emp : ${employees}">
-                                    <!--                      <td th:text="${emp.empId}"></td>-->
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
@@ -249,14 +248,7 @@
                                                      alt="user1">
                                             </div>
                                             <div class="d-flex justify-content-center">
-                                                <!--                                            <div class="d-flex flex-column justify-content-center">-->
-                                                <!--                                                <p class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></p>-->
                                                 <h6 class="mb-0 text-sm emp-name" th:text="${emp.empFirstName + '  ' + emp.empLastName}"></h6>
-
-                                                <!--                                                <h6 class="mb-0 text-sm emp-name" th:text="${emp.empLastName}"></h6>-->
-                                                <!--                                                th:text="${emp.empFirstName} ${emp.empLastName}">-->
-
-                                                <!--                                                <p class="text-xs text-secondary mb-0" th:text="${emp.empStartDate}"></p>-->
                                             </div>
                                         </div>
                                     </td>
@@ -271,9 +263,10 @@
                                         </span>
                                     </td>
 
+                                    <!-- buttons -->
                                     <td class="align-middle">
                                         <a
-                                                th:href="@{employees/edit(id=${emp.empId})}"
+                                                th:href="@{employees/edit(id=${emp.id})}"
                                                 class="text-info font-weight-bold text-xs"
                                                 data-toggle="tooltip"
                                                 data-original-title="Edit user">
@@ -283,7 +276,7 @@
 
                                     <td class="align-middle">
                                         <a
-                                                th:href="@{employees/delete(id=${emp.empId})}"
+                                                th:href="@{employees/delete(id=${emp.id})}"
                                                 class="text-danger font-weight-bold text-xs"
                                                 data-toggle="tooltip"
                                                 onclick="return confirm('Are you sure?')"
@@ -302,17 +295,17 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="sidenav-footer mx-3 mb-2 col-12 col-md-6">
-                    <a class="btn bg-gradient-primary mt-4 w-50"
-                       href="/employees/list"
-                       type="button">
-                        View all employees
-                    </a>
-                </div>
-            </div>
-        </div>
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <div class="sidenav-footer mx-3 mb-2 col-12 col-md-6">-->
+<!--                    <a class="btn bg-gradient-primary mt-4 w-50"-->
+<!--                       href="/employees/list"-->
+<!--                       type="button">-->
+<!--                        View all employees-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
         <div class="row">
             <div class="col-12">

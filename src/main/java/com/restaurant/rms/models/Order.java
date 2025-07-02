@@ -38,6 +38,8 @@ public class Order {
     // tableId;
     // paymentId;
 
+    // orderDetail?
+
 
     // temp
 //       import java.time.LocalDateTime;

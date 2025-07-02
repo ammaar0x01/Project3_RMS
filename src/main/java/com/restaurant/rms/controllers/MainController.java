@@ -1,29 +1,26 @@
 package com.restaurant.rms.controllers;
 
-//import com.restaurant.rms.repository.Employee1Repo;
 import com.restaurant.rms.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Number of routes: 10
- *
+ * MainController
+ * <br>
+ * Number of routes: 4
  */
 @Controller
 public class MainController {
 
     @Autowired
     private EmployeeRepo empRepo;
+    // **************************
 
     @RequestMapping("/")
     public String signIn(){
         return "sign-in";
     }
-//    @RequestMapping("/sign-in")
-//    public String signIn1(){
-//        return "sign-in";
-//    }
 
     @RequestMapping("/dashboard")
     public String dashboard(){
@@ -41,9 +38,7 @@ public class MainController {
     }
     // **************************
 
-
-
-
+    // temp
     // RESERVATION
     @RequestMapping("/reservations")
     public String reservations(){
@@ -67,11 +62,4 @@ public class MainController {
         return "menu/menu-add";
     }
     // **************************
-
-
-    // ----------------------------------------
-
-    // more ...
-    // ----------------------------------------
-
 }

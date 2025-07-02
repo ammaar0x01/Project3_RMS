@@ -1,7 +1,7 @@
 /*
  * Developer: Ammaar
  * Started: 22.04.25
- * Updated: 05.06.25
+ * Updated: 02.07.25
 */
 
 package com.restaurant.rms.models.DTO;
@@ -12,17 +12,11 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public class OrderDTO {
-
-//    @NotEmpty
     private LocalDateTime orderTime;
-    // LocalDateTime now = LocalDateTime.now();
 
-//    @NotEmpty
-//    @NotEmpty(message = "Field cannot be empty")
-    @NotNull
+//    @NotNull
     private double estimatedWaitTime;
 
-//    @NotEmpty(message = "Field cannot be empty")
     @NotNull
     private double totalPrice;
 
@@ -54,7 +48,7 @@ public class OrderDTO {
         this.orderTime = orderTime;
     }
 
-    public void setEstimatedWaitTime(@NotNull double estimatedWaitTime) {
+    public void setEstimatedWaitTime(double estimatedWaitTime) {
         this.estimatedWaitTime = estimatedWaitTime;
     }
 

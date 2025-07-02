@@ -8,6 +8,12 @@ Notes
 - edit the 'edit' page; make it more appealing
 ** update main branch
 
+- for orders,and reservations,
+dont delete them, just mark them as complete in the db,
+and create a custom query to select and display orders, and reservations
+that are NOT complete
+---
+
 - might use a views folder?
 - download bootstrap code to use locally?
 - convert to JAR file once the crud ops work

@@ -5,124 +5,164 @@ import com.restaurant.rms.models.Order;
 import com.restaurant.rms.repository.OrderRepo;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+/**
+ * ORDER
+ * <br>
+ * */
 @Controller
 @RequestMapping("/orders")
 public class OrderController {
-
     @Autowired
     private OrderRepo orderRepo;
     // --------------------------------------------
 
     // GET ALL
-//    @RequestMapping("/get/all")
     @RequestMapping("")
-    public String orders(){
+    public String getAllOrders(Model model){
+        List<Order> orders = orderRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        model.addAttribute("orders", orders);
         return "order/orders";
     }
     // --------------------------------------------
 
     // ADD
-    @RequestMapping("/add")
-    public String ordersAdd(){
-        return "order/orders-add";
-    }
     @GetMapping("/add")
-//    @RequestMapping("/post/")
-//    @GetMapping("/post/")
-    public String getPageToCreate(Model model) {
-//    public String createReqGet(Model model){
-        System.out.println("attempting to add to database...");
+    public String showAddPage(Model model) {
+        System.out.println("***ORDER. Attempting to add to database...");
         OrderDTO orderDTO = new OrderDTO();
         model.addAttribute("orderDTO", orderDTO);
         return "order/orders-add";
-
-//        EmployeeDTO empDTO = new EmployeeDTO();
-//        model.addAttribute("employeeDTO", empDTO);
-//        return "employee/employees-add";
     }
 
-    //    @PostMapping("/employees-add")
     @PostMapping("/add")
-//    @RequestMapping("/post/")
-    public String create(
-//    public String createReqPost(
+    public String addOrder(
             @Valid @ModelAttribute OrderDTO orderDTO,
             BindingResult result
     ) {
-        // checking for errors from the form
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors());
             return "order/orders-add";
-//            return "employee/employees-add";
         }
-        System.out.println("\n***Trying to add data...");
 
-//        Date currentDate = new Date();
-
-        LocalDateTime now = LocalDateTime.now();
-//        LocalDateTime a = LocalDateTime.now();
+        // creating the object
+        System.out.println("\n***ORDER. Trying to add data...");
+        LocalDateTime now = LocalDateTime.now(); // order time-stamp
         Order order = new Order(
                 now,
-//                orderDTO.getOrderTime(),
-//                orderDTO.getEstimatedWaitTime(),
                 Double.valueOf(orderDTO.getEstimatedWaitTime()),
-
-//                orderDTO.getTotalPrice(),
                 Double.valueOf(orderDTO.getTotalPrice()),
-
                 orderDTO.getStatus()
         );
 
-        // creating the object
-//        Employee emp = new Employee(
-//                eDTO.getEmpFirstName(),
-//                eDTO.getEmpLastName(),
-//                currentDate,
-//                eDTO.getRole(),
-//                eDTO.getEmpContactNum(),
-//                eDTO.getEmpEmail()
-//        );
-//
-//        // saving to database
+        // saving to database
         this.orderRepo.save(order);
         System.out.println("\n***Order-object \n(" + order + ") \nadded successfully***");
 
-//        this.empRepo.save(emp);
-//        System.out.println("\n***Employee-object \n(" + emp + ") \nadded successfully***");
-
         // re-directing
         return "redirect:/orders";
-//        return "redirect:/employees";
     }
     // --------------------------------------------
+
+
+    // EDIT
+    @GetMapping("/edit")
+    public String showEditPage(Model model, @RequestParam int id) {
+        System.out.println("\n***ORDER. EDIT. Getting...");
+
+        try {
+            Order order = orderRepo.findById(id).get();
+            OrderDTO orderDTO = new OrderDTO();
+
+            orderDTO.setStatus(order.getStatus());
+            orderDTO.setEstimatedWaitTime(order.getEstimatedWaitTime());
+            orderDTO.setTotalPrice(order.getTotalPrice());
+
+            model.addAttribute("order", order);
+            model.addAttribute("orderDTO", orderDTO);
+        }
+        catch (Exception ex) {
+            System.out.println("Exception" + ex.getMessage());
+            return "redirect:/order";
+        }
+        return "order/orders-edit";
+    }
+
+    // Editing an existing record
+    @PostMapping("/edit")
+    public String editOrder(
+            Model model,
+            @RequestParam int id,
+            @Valid @ModelAttribute OrderDTO orderDTO,
+            BindingResult result
+    ) {
+        System.out.println("\n***ORDER. EDIT. Putting...");
+
+        try {
+            Order order = orderRepo.findById(id).get();
+            model.addAttribute("orderDTO", order);
+
+            if (result.hasErrors()) {
+                return "order/orders-edit";
+            }
+
+            // updating other details
+            order.setStatus(orderDTO.getStatus());
+            order.setEstimatedWaitTime(orderDTO.getEstimatedWaitTime());
+            order.setTotalPrice(orderDTO.getTotalPrice());
+
+            orderRepo.save(order);
+            System.out.println("\n***ORDER. \nUpdated ORDER successfully");
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return "redirect:/orders";
+    }
     // --------------------------------------------
+
+
+    // DELETE
+    // NOTE/IDEA:
+    // modify this or create a new method to mark an order as complete
+    // instead of deleting it
+    @GetMapping("/delete")
+    public String deleteEmployee(@RequestParam int id) {
+        try {
+            Order order = orderRepo.findById(id).get();
+
+            // delete from database
+            orderRepo.delete(order);
+            System.out.println("\n***ORDER. \nSuccessful deletion of:");
+            System.out.println(order);
+        }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return "redirect:/orders";
+    }
+    // --------------------------------------------
+
 
     // primarily for waiters and kitchen-staff
     @RequestMapping("/simple-mode")
-//    @RequestMapping("/orders-only")
     public String ordersOnly(){
         return "order/orders-only";
     }
 
-
     @RequestMapping("/simple-mode/add")
-//    @RequestMapping("/orders-only-add")
     public String ordersOnyAdd(){
         return "order/orders-only-add";
     }
     // --------------------------------------------
-
-
-
 
 }

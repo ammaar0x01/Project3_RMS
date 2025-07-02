@@ -35,7 +35,8 @@ build/
 # new
 _temp
 _trash
-_notes.txt
 src/main/resources/application.properties
 runnable_JAR
 src/main/resources/templates/_trash
+
+_notes.txt

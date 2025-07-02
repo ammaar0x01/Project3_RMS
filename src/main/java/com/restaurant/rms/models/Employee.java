@@ -13,22 +13,17 @@ import java.util.Date;
 
 @Entity
 @Table(name="EmployeeTest")
-//@Table(name="Employee_test")
 //@Table(name="Employee")
-//@Table(name="Employee1")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int empId;
-//    private int id;
+    private int id;
 
 //    @Column(columnDefinition = "TEXT")
     private String empFirstName;
     private String empLastName;
     private Date empStartDate;
     private String role;
-
-
 
     private String empContactNum;
     private String empEmail;
@@ -55,8 +50,8 @@ public class Employee {
     // -------------------------------------
 
     // getters
-    public int getEmpId() {
-        return empId;
+    public int getId() {
+        return id;
     }
 
     public String getEmpFirstName() {
@@ -102,8 +97,8 @@ public class Employee {
 
 
     // setters? for updating
-    public void setEmpId(int empId) {
-        this.empId = empId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setEmpFirstName(String empFirstName) {
@@ -135,7 +130,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee1{" +
-                "empId=" + empId +
+                "empId=" + id +
                 ", empFirstName='" + empFirstName + '\'' +
                 ", empLastName='" + empLastName + '\'' +
                 ", empStartDate=" + empStartDate +

@@ -16,36 +16,26 @@ import java.util.List;
 
 /**
  * EMPLOYEE
+ * <br>
  * Used for operations related to the Employee entity
  * */
 @Controller
 @RequestMapping("/employees")
-//@RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
     private EmployeeRepo empRepo;
-
-    // add constructor?
     // --------------------------------------------
 
-    // CREATE
-//    @GetMapping("/employees-add")
-//    @RequestMapping("/employees-add")
+    // ADD
     @GetMapping("/add")
-//    @RequestMapping("/post/")
-//    @GetMapping("/post/")
-    public String employeeAdd(Model model) {
-//    public String createReqGet(Model model){
+    public String showAddPage(Model model) {
         EmployeeDTO empDTO = new EmployeeDTO();
         model.addAttribute("employeeDTO", empDTO);
         return "employee/employees-add";
     }
 
-//    @PostMapping("/employees-add")
     @PostMapping("/add")
-//    @RequestMapping("/post/")
-    public String createEmployee(
-//    public String createReqPost(
+    public String addEmployee(
             @Valid @ModelAttribute EmployeeDTO eDTO,
             BindingResult result
     ) {
@@ -55,9 +45,8 @@ public class EmployeeController {
             return "employee/employees-add";
         }
 
-        Date currentDate = new Date();
-
         // creating the object
+        Date currentDate = new Date();
         Employee emp = new Employee(
                 eDTO.getEmpFirstName(),
                 eDTO.getEmpLastName(),
@@ -76,22 +65,15 @@ public class EmployeeController {
     }
     // --------------------------------------------
 
-    // READ
-//    @GetMapping("/get")
-    // --------------------------------------------
 
-    // UPDATE
+    // EDIT
     // getting existing data of the product and displaying it on the update page
-    // show edit page
     @GetMapping("/edit")
-//        @GetMapping("/put")
-//        @PutMapping("/edit")
     public String showEditPage(
-//        public String updateReqGet(
             Model model,
             @RequestParam int id
     ) {
-        System.out.println("\n***Getting...");
+        System.out.println("\n***(EDIT) Getting...");
         try {
             Employee employee = empRepo.findById(id).get();
             EmployeeDTO empDTO = new EmployeeDTO();
@@ -107,30 +89,25 @@ public class EmployeeController {
             System.out.println("Exception" + ex.getMessage());
             return "redirect:/employee";
         }
-        return "employee/editEmp";
+        return "employee/employees-edit";
     }
 
-    // Updating an existing record
-
-        @PostMapping("/edit")
-//    @PutMapping("/edit")
-//        @PutMapping("/put")
-    public String updateProduct(
-//        public String updateReqPut(
+    // Editing an existing record
+    @PostMapping("/edit")
+    public String editEmployee(
             Model model,
             @RequestParam int id,
             @Valid @ModelAttribute EmployeeDTO EmployeeDTO,
-//                @Valid @ModelAttribute ProductDTO productDTO,
             BindingResult result
     ) {
-        System.out.println("\n***Putting...");
+        System.out.println("\n***(EDIT) Putting...");
 
         try {
             Employee employee = empRepo.findById(id).get();
             model.addAttribute("employeeDTO", employee);
 
             if (result.hasErrors()) {
-                return "employee/editEmp";
+                return "employee/employees-edit";
             }
 
             // updating other details
@@ -140,21 +117,19 @@ public class EmployeeController {
 
             empRepo.save(employee);
             System.out.println("\n***Updated employee successfully");
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
         return "redirect:/employees";
-//        return "redirect:/employee/employees";
     }
     // --------------------------------------------
 
 
     // DELETE
     @GetMapping("/delete")
-//        @DeleteMapping("/delete")
-    public String deleteProduct(@RequestParam int id) {
-//        public String delete(@RequestParam int id){
+    public String deleteEmployee(@RequestParam int id) {
         try {
             Employee employee = empRepo.findById(id).get();
 
@@ -162,56 +137,37 @@ public class EmployeeController {
             empRepo.delete(employee);
             System.out.println("\n***Successful deletion of:");
             System.out.println(employee);
-
-            //                pRepo.delete(product);
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
         return "redirect:/employees";
-//            return "redirect:/products";
     }
     // --------------------------------------------
 
 
     // GET ALL
-    // @RequestMapping("/dashboard-employees")
-//    @RequestMapping("/employees")
-//    @RequestMapping("/get/all")
-//    @RequestMapping("/all")
-    @RequestMapping("")
-
-//    public String getAll(){
-    public String employees(Model model) {
-//        return "employee/employees";
-
-        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "empId"));
-
+    @GetMapping("")
+    public String getAllEmployees(Model model) {
+        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
         model.addAttribute("employees", employees);
         return "employee/employees";
     }
 
-    //    @RequestMapping("/employees-list")
-//    @GetMapping("/employees-list")
-    @GetMapping("/list")
-    public String employeesList(Model model) {
-//        List<Employee1> employees = empRepo.findAll();
-        // or
-        // reverse order
-        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "empId"));
-
-        model.addAttribute("employees", employees);
-        return "employee/employees-list";
-    }
+//    @GetMapping("")
+//    public String listEmployees(Model model) {
+//        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+//        model.addAttribute("employees", employees);
+//        return "employee/employees-list";
+//    }
     // --------------------------------------------
 
 
     // Other
-    @RequestMapping("/pay")
-//    @RequestMapping("/employees-pay")
+    @GetMapping("/pay")
     public String employeesPay() {
         return "employee/employees-pay";
     }
-
 
 }

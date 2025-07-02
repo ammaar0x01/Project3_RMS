@@ -1,10 +1,7 @@
 /*
 Project:    Restaurant-management system (RMS)
 Started:    22.04.25
-Updated:    10.06.25
-
-*** CURRENT BRANCH: trpl_A ***
-******************************
+Updated:    02.07.25
 
 GitHub Repo
 https://github.com/ammaar0x01/Project3_RMS
