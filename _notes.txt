@@ -3,6 +3,11 @@ NOTES
 
 Notes
 -----
+- change icons of items in side navbar; or remove the items
+- put 'tables' section in reservation section?
+- edit the 'edit' page; make it more appealing
+** update main branch
+
 - might use a views folder?
 - download bootstrap code to use locally?
 - convert to JAR file once the crud ops work

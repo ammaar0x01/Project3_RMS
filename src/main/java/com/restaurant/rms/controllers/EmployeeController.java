@@ -1,7 +1,7 @@
 package com.restaurant.rms.controllers;
 
 import com.restaurant.rms.models.Employee;
-import com.restaurant.rms.models.EmployeeDTO;
+import com.restaurant.rms.models.DTO.EmployeeDTO;
 import com.restaurant.rms.repository.EmployeeRepo;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,7 @@ import java.util.List;
  * Used for operations related to the Employee entity
  * */
 @Controller
+@RequestMapping("/employees")
 //@RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
@@ -28,19 +29,20 @@ public class EmployeeController {
     // --------------------------------------------
 
     // CREATE
-    @RequestMapping("/employees-add")
-//    @PostMapping("/add")
+//    @GetMapping("/employees-add")
+//    @RequestMapping("/employees-add")
+    @GetMapping("/add")
 //    @RequestMapping("/post/")
 //    @GetMapping("/post/")
     public String employeeAdd(Model model) {
 //    public String createReqGet(Model model){
         EmployeeDTO empDTO = new EmployeeDTO();
-        model.addAttribute("EmployeeDTO", empDTO);
+        model.addAttribute("employeeDTO", empDTO);
         return "employee/employees-add";
     }
 
-    @PostMapping("/employees-add")
-//    @PostMapping("/add")
+//    @PostMapping("/employees-add")
+    @PostMapping("/add")
 //    @RequestMapping("/post/")
     public String createEmployee(
 //    public String createReqPost(
@@ -99,7 +101,7 @@ public class EmployeeController {
             empDTO.setRole(employee.getRole());
 
             model.addAttribute("employee", employee);
-            model.addAttribute("EmployeeDTO", empDTO);
+            model.addAttribute("employeeDTO", empDTO);
         }
         catch (Exception ex) {
             System.out.println("Exception" + ex.getMessage());
@@ -125,7 +127,7 @@ public class EmployeeController {
 
         try {
             Employee employee = empRepo.findById(id).get();
-            model.addAttribute("EmployeeDTO", employee);
+            model.addAttribute("employeeDTO", employee);
 
             if (result.hasErrors()) {
                 return "employee/editEmp";
@@ -174,8 +176,11 @@ public class EmployeeController {
 
     // GET ALL
     // @RequestMapping("/dashboard-employees")
-    @RequestMapping("/employees")
+//    @RequestMapping("/employees")
 //    @RequestMapping("/get/all")
+//    @RequestMapping("/all")
+    @RequestMapping("")
+
 //    public String getAll(){
     public String employees(Model model) {
 //        return "employee/employees";
@@ -187,7 +192,8 @@ public class EmployeeController {
     }
 
     //    @RequestMapping("/employees-list")
-    @GetMapping("/employees-list")
+//    @GetMapping("/employees-list")
+    @GetMapping("/list")
     public String employeesList(Model model) {
 //        List<Employee1> employees = empRepo.findAll();
         // or
@@ -201,7 +207,8 @@ public class EmployeeController {
 
 
     // Other
-    @RequestMapping("/employees-pay")
+    @RequestMapping("/pay")
+//    @RequestMapping("/employees-pay")
     public String employeesPay() {
         return "employee/employees-pay";
     }

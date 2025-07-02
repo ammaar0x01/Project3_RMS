@@ -12,11 +12,12 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-//@Entity
+@Entity
+@Table(name="OrderTest")
 //@Table(name="Order")
 public class Order {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private LocalDateTime orderTime;
@@ -24,7 +25,9 @@ public class Order {
 
 //    private Datetime serveTime;
     // rather change it? to...
+
     private double estimatedWaitTime;
+    // calculate this in the back-end, instead of a user entering a value?
 
     private double totalPrice;
     private String status;

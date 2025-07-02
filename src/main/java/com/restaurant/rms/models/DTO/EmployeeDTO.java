@@ -1,4 +1,4 @@
-package com.restaurant.rms.models;
+package com.restaurant.rms.models.DTO;
 
 import jakarta.validation.constraints.NotEmpty;
 
@@ -17,10 +17,10 @@ public class EmployeeDTO {
     @NotEmpty(message="Field cannot be empty")
     private String role;
 
-    @NotEmpty
+//    @NotEmpty
     private String empContactNum;
 
-    @NotEmpty
+//    @NotEmpty
     private String empEmail;
     // --------------------------------
 
@@ -58,7 +58,8 @@ public class EmployeeDTO {
         this.role = role;
     }
 
-    public @NotEmpty String getEmpContactNum() {
+    public String getEmpContactNum() {
+//    public @NotEmpty String getEmpContactNum() {
         return empContactNum;
     }
 
@@ -66,7 +67,8 @@ public class EmployeeDTO {
         this.empContactNum = empContactNum;
     }
 
-    public @NotEmpty String getEmpEmail() {
+    public String getEmpEmail() {
+//    public @NotEmpty String getEmpEmail() {
         return empEmail;
     }
 

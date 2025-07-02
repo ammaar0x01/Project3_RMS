@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--<html lang="en">-->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8"/>
@@ -59,7 +60,50 @@
                 <h5 class="lead text-center">Create a new order</h5>
 
                 <div class="card-body">
-                    <form role="form text-left" method="POST">
+<!--                    <form role="form text-left" method="POST">-->
+                        <form role="form text-left" method="POST" th:object="${orderDTO}">
+
+                            <div class="mb-3">
+                                <input class="form-control"
+                                       type="number"
+                                       th:field="${orderDTO.estimatedWaitTime}"
+                                       placeholder="Estimated wait-time">
+
+                            </div>
+
+
+                            <div class="mb-3">
+                                <input class="form-control"
+                                       type="number"
+
+                                       th:field="${orderDTO.totalPrice}"
+                                       placeholder="Total price">
+
+                            </div>
+
+
+                            <div class="mb-3">
+                                <input class="form-control"
+                                       th:field="${orderDTO.status}"
+                                       placeholder="Status">
+
+                            </div>
+
+                            <label class="text-light lead">Order status</label>
+                            <div class="mb-3">
+<!--                                <select class="form-select" th:field="${orderDTO.status}">-->
+<!--                                    <option value="Kitchen-staff">Kitchen-staff member</option>-->
+<!--                                    <option value="Waiter">Waiter</option>-->
+<!--                                    <option value="Manager">Manager</option>-->
+<!--                                </select>-->
+
+<!--                                <p th:if="${#fields.hasErrors('role')}"-->
+<!--                                   th:errorclass="text-danger"-->
+<!--                                   th:errors="${employeeDTO.role}">-->
+<!--                                </p>-->
+                            </div>
+
+
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Order details</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
