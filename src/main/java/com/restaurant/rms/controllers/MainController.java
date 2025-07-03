@@ -40,15 +40,15 @@ public class MainController {
 
     // temp
     // RESERVATION
-    @RequestMapping("/reservations")
-    public String reservations(){
-        return "reservation/reservations";
-    }
-
-    @RequestMapping("/reservations-add")
-    public String reservationAdd(){
-        return "reservation/reservations-add";
-    }
+//    @RequestMapping("/reservations")
+//    public String reservations(){
+//        return "reservation/reservations";
+//    }
+//
+//    @RequestMapping("/reservations-add")
+//    public String reservationAdd(){
+//        return "reservation/reservations-add";
+//    }
     // **************************
 
     // MENU

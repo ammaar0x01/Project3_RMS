@@ -1,11 +1,20 @@
 NOTES
 =====
 
+Main branch
+- has PDF
+- has docx file
+- has screenshots dir
+- has runnable_JAR dir
+* the other branches wont have these
+---
+
 Notes
 -----
 - change icons of items in side navbar; or remove the items
 - put 'tables' section in reservation section?
-- edit the 'edit' page; make it more appealing
+
+** following spring boot auth tut, create and add a branch for that tut to the RMS repo
 ** update main branch
 
 - for orders,and reservations,

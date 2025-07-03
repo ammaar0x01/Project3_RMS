@@ -1,31 +1,22 @@
-package com.restaurant.rms.models;
+package com.restaurant.rms.models.DTO;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="CustomerGroupPayment")
-public class CustomerGroupPayment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CustomerGroupPaymentDTO {
+    @NotNull
     private int paymentId;
+    @NotNull
     private LocalDateTime paymentDateTime;
+
     private double paymentAmount;
+    @NotEmpty
     private String paymentTransactionType;
 
-    @ManyToOne(optional=false)
-    @JoinColumn(name="customer_group_id")
-    private CustomerGroup customerGroup;
+    private int customerGroupId;
 
-    public CustomerGroupPayment() {}
-
-    public CustomerGroupPayment(LocalDateTime paymentDateTime, double paymentAmount, String paymentTransactionType) {
-        this.paymentDateTime = paymentDateTime;
-        this.paymentAmount = paymentAmount;
-        this.paymentTransactionType = paymentTransactionType;
-
-    }
     public int getPaymentId() {
         return paymentId;
     }
@@ -37,9 +28,11 @@ public class CustomerGroupPayment {
     }
     public void setPaymentDateTime(LocalDateTime paymentDateTime) {
         this.paymentDateTime = paymentDateTime;
+
     }
     public double getPaymentAmount() {
         return paymentAmount;
+
     }
     public void setPaymentAmount(double paymentAmount) {
         this.paymentAmount = paymentAmount;
@@ -51,10 +44,10 @@ public class CustomerGroupPayment {
     public void setPaymentTransactionType(String paymentTransactionType) {
         this.paymentTransactionType = paymentTransactionType;
     }
-    public CustomerGroup getCustomerGroup() {
-        return customerGroup;
+    public int getCustomerGroupId() {
+        return customerGroupId;
     }
-    public void setCustomerGroup(CustomerGroup customerGroup) {
-        this.customerGroup = customerGroup;
+    public void setCustomerGroupId(int customerGroupId) {
+        this.customerGroupId = customerGroupId;
     }
 }

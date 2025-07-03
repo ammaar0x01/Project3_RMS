@@ -16,11 +16,11 @@ public class Tools {
     }
 
     // testing
-    public static void main(String[] args){
-        String str = Tools.capitalize("wORd");
-        System.out.println(str);
-
-        String str1 = Tools.capitalize1("wORd");
-        System.out.println(str1);
-    }
+//    public static void main(String[] args){
+//        String str = Tools.capitalize("wORd");
+//        System.out.println(str);
+//
+//        String str1 = Tools.capitalize1("wORd");
+//        System.out.println(str1);
+//    }
 }

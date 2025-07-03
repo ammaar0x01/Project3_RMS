@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name="EmployeeTest")
-//@Table(name="Employee")
+//@Table(name="EmployeeTest")
+@Table(name="Employee")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

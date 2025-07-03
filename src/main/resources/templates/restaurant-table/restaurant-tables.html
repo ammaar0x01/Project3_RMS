@@ -4,20 +4,25 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>RMS - Restaurant Tables</title>
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <title>RMS - Reservations</title>
 
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
     <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>-->
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>
+
+    <!-- STYLES  -->
+    <link rel="stylesheet" href="../css/main.css">
+
 </head>
 
 <body class="g-sidenav-show bg-gray-100" onload="">
@@ -33,13 +38,13 @@
     </div>
     <hr class="horizontal dark mt-0">
 
-    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse w-auto max-height-vh-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link " href="dashboard">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>shop </title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-1716.000000, -439.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -60,10 +65,10 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="employees">
+                <a class="nav-link active" href="#navbarBlur">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -79,15 +84,15 @@
                             </g>
                         </svg>
                     </div>
-                    <span class="nav-link-text ms-1">Employees</span>
+                    <span class="nav-link-text ms-1">Tables</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link  " href="orders">
+                <a class="nav-link  " href="tables">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>office</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-1869.000000, -293.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -108,10 +113,10 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link  " href="reservations">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>credit-card</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -133,10 +138,10 @@
 
             <!-- Profile -->
             <li class="nav-item">
-                <a class="nav-link" href="profile">
+                <a class="nav-link  " href="profile">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1"
-                             xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <title>customer-support</title>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g transform="translate(-1717.000000, -291.000000)" fill="#FFFFFF" fill-rule="nonzero">
@@ -161,7 +166,7 @@
 
         <div class="sidenav-footer mx-3 ">
             <a class="btn bg-gradient-primary mt-4 w-100"
-               href="../_trash/sign-in.html"
+               href="./sign-in"
                type="button">
                 Log out
             </a>
@@ -170,12 +175,13 @@
 </aside>
 
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-    <!-- Navbar -->
+
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl"
          id="navbarBlur"
          navbar-scroll="true">
+
         <div class="container-fluid py-1 px-3">
-            <h5 class="pt-3 display-6 text-primary">Reservations</h5>
+            <h5 class="pt-3 display-6 text-primary">Restaurant Tables</h5>
 
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -202,110 +208,83 @@
     </nav>
 
     <div class="container-fluid py-4">
-        <!-- option1 -->
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>All Reservations</h6>
+                        <h6>All Tables</h6>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Table number(s)
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Main
-                                        guest
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Table Number
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                        Number of people
+                                        Table Capacity
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Status
+                                      Table Status
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Reservation time
+                                        Table Last Cleaned
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
                                     <th class="text-secondary opacity-7"></th>
                                 </tr>
                                 </thead>
 
-                                <tbody>
-                                <!-- t-row1 -->
-                                <tr th:each="reservation : ${reservations}">
 
-                                    <td class="align-middle text-center">
-                                        <h6 class="mb-0 text-sm" th:text="${reservation.getTableId()}"></h6>
-                                    </td>
+                                <tbody>
+                                <tr th:each="table : ${tables}">
                                     <td>
                                         <div class="d-flex px-2 py-1">
-
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm"
-                                                    th:text="*{reservation.getCustomerGroup().getFirstName()}"></h6>
+                                            <div>
+                                                <img src="../assets/img/team-1.jpg" class="avatar avatar-sm me-3"
+                                                     alt="table1">
+                                            </div>
+                                            <div class="d-flex justify-content-center">
+                                              <h6 class="mb-0 text-sm table-number" th:text="${table.id + '  ' + table.tableNumber}"></h6>
 
                                             </div>
                                         </div>
                                     </td>
+
                                     <td>
-                                        <h6 class="mb-0 text-sm"
-                                            th:text="${reservation.getCustomerGroup().getNumberOfPeople()}"></h6>
-
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">Occupied</span>
-
+                                        <p class="text-xs font-weight-bold mb-0" th:text="${table.capacity}"></p>
                                     </td>
 
                                     <td class="align-middle text-center">
-                                        <h6 class="mb-0 text-sm" th:text="${reservation.reservationDateTime}"></h6>
+                                        <span class="text-secondary text-xs font-weight-bold"
+                                              th:text="${table.status}">
+                                        </span>
                                     </td>
 
-                                    <!-- buttons -->
-                                    <!-- different approach -->
-<!--                                    <td class="align-middle">-->
-<!--                                        <th:block th:if="${reservation != null and reservation.id != null}">-->
-<!--                                            <a th:href="@{reservations/edit(uuid=${reservation.id.uuid}, customerGroupId=${reservation.id.customerGroupId})}"-->
-<!--                                               class="text-info font-weight-bold text-xs"-->
-<!--                                               data-toggle="tooltip"-->
-<!--                                               data-original-title="Edit Reservation">-->
-<!--                                                Edit-->
-<!--                                            </a>-->
-
-
-<!--                                            <a th:href="@{reservations/delete(uuid=${reservation.id.uuid}, customerGroupId=${reservation.id.customerGroupId})}"-->
-<!--                                               class="text-danger font-weight-bold text-xs"-->
-<!--                                               data-toggle="tooltip"-->
-<!--                                               onclick="return confirm('Are you sure?')">-->
-<!--                                                Remove-->
-<!--                                            </a>-->
-<!--                                        </th:block>-->
-<!--                                    </td>-->
-
-                                    <!-- original approach -->
                                     <td class="align-middle">
-                                        <a th:href="@{reservations/edit(uuid=${reservation.id.uuid}, customerGroupId=${reservation.id.customerGroupId})}"
-                                           class="text-info font-weight-bold text-xs"
-                                           data-toggle="tooltip"
-                                           data-original-title="Edit Reservation">
+                                        <a
+                                                th:href="@{/edit(id=${table.id})}"
+                                                class="text-info font-weight-bold text-xs"
+                                                data-toggle="tooltip"
+                                                data-original-title="Edit user">
                                             Edit
                                         </a>
                                     </td>
 
                                     <td class="align-middle">
-                                        <a th:href="@{reservations/delete(uuid=${reservation.id.uuid}, customerGroupId=${reservation.id.customerGroupId})}"
-                                           class="text-danger font-weight-bold text-xs"
-                                           data-toggle="tooltip"
-                                           onclick="return confirm('Are you sure?')">
+                                        <a
+                                                th:href="@{/delete(id=${table.id})}"
+                                                class="text-danger font-weight-bold text-xs"
+                                                data-toggle="tooltip"
+                                                onclick="return confirm('Are you sure?')"
+                                        >
                                             Remove
                                         </a>
                                     </td>
-
                                 </tr>
+
+
                                 </tbody>
                             </table>
                         </div>
@@ -316,52 +295,46 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Available tables</h6>
-                    </div>
-
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-3">
-                            <span class="badge badge-sm col-1 p-4 bg-gradient-success">1</span>
-                            <span class="badge badge-sm col-1 p-4 bg-gradient-primary">2</span>
-                            <span class="badge badge-sm col-1 p-4 bg-gradient-warning">3</span>
-                            <span class="badge badge-sm col-1 p-3 bg-gradient-info">5</span>
-                            <span class="badge badge-sm col-1 p-3 bg-gradient-secondary">6</span>
-                            <span class="badge badge-sm col-1 p-3 bg-gradient-dark">7</span>
-                            <span class="badge badge-sm col-1 p-2 bg-gradient-light">8</span>
-
-                            <div class="badge badge-lg col-1 bg-gradient-success">9</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- add new order -->
-        <!-- this feature is primarily for managers and people who manage reservations -->
-        <div class="row">
-            <div class="col-12">
                 <div class="sidenav-footer mx-3 mb-2 col-12 col-md-6">
                     <a class="btn bg-gradient-primary mt-4 w-50"
-                       href="./reservations-list"
+                       href="./tables-list"
                        type="button">
-                        View all reservations
+                        View all tables
                     </a>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="mx-3 col-12 col-md-6">
-                <a class="btn bg-gradient-warning mt-4 w-50"
-                   href="/reservations-add">
-                    Add a new reservation
-                </a>
+            <div class="col-12">
+                <div class="sidenav-footer mx-3 col-12 col-md-6">
+                    <a class="btn bg-gradient-warning mt-2 w-50"
+                       href="./tables-add"
+                       type="button">
+                        Add a new table
+                    </a>
+                </div>
+
             </div>
         </div>
+
     </div>
 </main>
+
+<!--   Core JS Files   -->
+<!--<script src="../assets/js/core/popper.min.js"></script>-->
+<!--<script src="../assets/js/core/bootstrap.min.js"></script>-->
+<!--<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>-->
+<!--<script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>-->
+<!--<script>-->
+<!--    var win = navigator.platform.indexOf('Win') > -1;-->
+<!--    if (win && document.querySelector('#sidenav-scrollbar')) {-->
+<!--      var options = {-->
+<!--        damping: '0.5'-->
+<!--      }-->
+<!--      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);-->
+<!--    }-->
+<!--</script>-->
 
 
 <!-- Core JS Files -->
@@ -387,4 +360,5 @@
 <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
 </body>
+
 </html>

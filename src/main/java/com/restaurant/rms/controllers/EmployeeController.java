@@ -155,12 +155,12 @@ public class EmployeeController {
         return "employee/employees";
     }
 
-//    @GetMapping("")
-//    public String listEmployees(Model model) {
-//        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
-//        model.addAttribute("employees", employees);
-//        return "employee/employees-list";
-//    }
+    @GetMapping("/list")
+    public String listEmployees(Model model) {
+        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        model.addAttribute("employees", employees);
+        return "employee/employees-list";
+    }
     // --------------------------------------------
 
 

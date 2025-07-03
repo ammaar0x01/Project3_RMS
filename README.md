@@ -1,22 +1,37 @@
-### Program: 
-**RMS (Restaurant-management System)**
-- Description: A web-app for managing a restaurant
-- Tech-stack
-    + Java 21 (Spring Boot)
-    + SQL (MySQL work bench)
-    + HTML
-    + CSS
-    + JS
+### RMS (Restaurant-management System)
+
+**Description**
+> A web-app for managing a restaurant 
+
+<br>
+
+Tech-stack
+- Java 
+- SQL
+- HTML
+- CSS
+- JS
+
+Tools 
+- JDK 21
+- Spring Boot
+- MySQL Workbench 8.0, Community Edition
 --- 
 
 - Started	18.04.25
 - Updated: 	02.07.25
 - Status: 	work-in-progress
-- Branch: 	230159478
-- Developer: 	ammaar0x01
+- Branch: 	main
+
+Developers: 	
+  + ammaar0x01
+  + Salaamah
+  + Kyran
+  + Leslie
+  + Esethu				
 ---
 
-### Pre-requisites 
+#### Pre-requisites 
 ```
 - Should have Java installed (Version 21 used for this project)
 - Should have IntelliJ installed 
@@ -30,33 +45,32 @@
 ---
 
 
-### Download the program
+#### Download the program
 ```
 git clone --branch [branch name] [git https URL] 
 OR
 Download the zipped folder
 ```
 
-### Run the program
-Using the IntelliJ IDE
+#### Run the program
+(Option1) Using the IntelliJ IDE
 1. Click the run button
 2. Open the app in the browser; default ip address=localhost:8080 (http://localhost:8080)
 
-JAR file
+(Option2) JAR file
 1. Open the command-line
 2. Run `java -jar [JAR file]`
 3. Open the app in the browser; default ip address=localhost:8080 (http://localhost:8080)
 
-OR 
-<br >
-Run the batch script to run the JAR file
+(Option3) Run the batch script to run the JAR file
+
 ---
 
-### ERD 
+#### ERD 
 ![ERD.jpg](ERD.jpg)
 ---
 
-### Dependencies used (using the spring-initializer tool)
+#### Dependencies used (using the spring-initializer tool)
 ```
 - Spring Web
 - Thymeleaf
@@ -74,33 +88,8 @@ Run the batch script to run the JAR file
 ---
 
 
-### Screenshots
-
-![Screenshot 2025-04-22 065935.png](screenshots%2FScreenshot%202025-04-22%20065935.png)
-
-![Screenshot 2025-04-22 065941.png](screenshots%2FScreenshot%202025-04-22%20065941.png)
----
-
-
-### Convert to JAR file (in IntelliJ)
-1. Navigate to the pom.xml file 
-2. Click the 'M' (Maven) icon on the right side of the screen
-3. Open the dropdown with the name of your java project 
-4. Open the dropdown labeled 'Lifecycle'
-5. Select the 'package' option
-6. If build is successful, the JAR file will be in the '.\target' directory 
----
-
-
-### Deployment
-- https://docs.spring.io/spring-boot/tutorial/first-application/index.html
-- https://aditya-sunjava.medium.com/recommended-deployment-method-for-spring-boot-applications-in-a-production-environment-6fdd70dfc844
-- (convert to JAR file) https://www.youtube.com/watch?v=L2y2XXI_d2w
----
-
-
-### More help (references)
-- https://www.geeksforgeeks.org/returning-an-html-page-from-a-restful-controller-in-spring-boot/
-- https://start.spring.io/
-- https://www.youtube.com/watch?v=YDRNMAJo0MA
+#### Screenshots
+![sshot1.png](screenshots%2Fsshot1.png)
+![sshot2.png](screenshots%2Fsshot2.png)
+![sshot3.png](screenshots%2Fsshot3.png)
 ---
