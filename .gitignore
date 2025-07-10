@@ -38,6 +38,7 @@ _trash
 src/main/resources/application.properties
 runnable_JAR
 src/main/resources/templates/_trash
+public/images
 
 _help.txt
 _notes.txt
