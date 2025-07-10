@@ -19,7 +19,8 @@ public class MainController {
 
     @RequestMapping("/")
     public String signIn(){
-        return "sign-in";
+//        return "sign-in";
+        return "dashboard";
     }
 
     @RequestMapping("/dashboard")
@@ -39,18 +40,6 @@ public class MainController {
     // **************************
 
     // temp
-    // RESERVATION
-//    @RequestMapping("/reservations")
-//    public String reservations(){
-//        return "reservation/reservations";
-//    }
-//
-//    @RequestMapping("/reservations-add")
-//    public String reservationAdd(){
-//        return "reservation/reservations-add";
-//    }
-    // **************************
-
     // MENU
     @RequestMapping("/menu")
     public String menu(){
