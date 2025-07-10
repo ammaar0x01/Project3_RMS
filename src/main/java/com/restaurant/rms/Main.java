@@ -1,22 +1,11 @@
 /*
 Project:    Restaurant-management system (RMS)
 Started:    22.04.25
-Updated:    02.07.25
+Updated:    10.07.25
 
 GitHub Repo
 https://github.com/ammaar0x01/Project3_RMS
 ---
-
-Members
--------
-Name and surname    | Student id    |
--------------------------------------
-Ammaar Swartland    | 230159478     |
-	| 	|
-	| 	|
-	| 	|
-	| 	|
--------------------------------------
 
 Responsibilities
 -------------------------------------------------------------------------
