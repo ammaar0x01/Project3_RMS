@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Edit Salary</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5 class="mb-0">Edit Employee Salary</h5>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/salaries/edit}" th:object="${salaryDTO}" method="post">
+                        <input type="hidden" th:field="*{employeePaymentId}"/>
+
+                        <div class="mb-3">
+                            <label class="form-label">Employee</label>
+                            <select th:field="*{employeeId}" class="form-select" required>
+                                <option value="" disabled>Select employee</option>
+                                <option th:each="e : ${employees}" th:value="${e.id}"
+                                        th:text="${e.empFirstName + ' ' + e.empLastName + ' (' + e.role + ')'}"
+                                        th:selected="${e.id == salaryDTO.employeeId}"></option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Amount</label>
+                            <input type="number" step="0.01" th:field="*{amount}" class="form-control" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Payment Method</label>
+                            <input type="text" th:field="*{method}" class="form-control" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Last Payment</label>
+                            <input type="date" th:field="*{lastPayment}" class="form-control"/>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Update Salary</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end">
+                    <a th:href="@{/salaries}" class="btn btn-link">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
