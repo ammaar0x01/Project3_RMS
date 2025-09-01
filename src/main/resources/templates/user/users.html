@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RMS - Users, List</title>
+
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+<main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <h5 class="pt-3 display-6 text-primary">Users</h5>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header pb-0">
+                        <h6>All Users</h6>
+                        <p>Total users: <span th:text="${users.size()}">0</span></p>
+                    </div>
+
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Role</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employee</th>
+                                    <th class="text-secondary opacity-7"></th>
+                                    <th class="text-secondary opacity-7"></th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr th:each="u : ${users}">
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+                                            <div class="d-flex justify-content-center">
+                                                <h6 class="mb-0 text-sm" th:text="${u.username}">username</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <span class="badge badge-sm bg-gradient-info" th:text="${u.role}">USER</span>
+                                    </td>
+
+                                    <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold"
+                          th:text="${u.employee != null ? u.employee.empFirstName + ' ' + u.employee.empLastName : '—'}">—</span>
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <a th:href="@{/users/edit/{id}(id=${u.userId})}"
+                                           class="text-info font-weight-bold text-xs">Edit</a>
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <a th:href="@{/users/delete/{id}(id=${u.userId})}"
+                                           class="text-danger font-weight-bold text-xs"
+                                           onclick="return confirm('Delete this user?')">Remove</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- actions -->
+        <div class="row">
+            <div class="col-12">
+                <div class="sidenav-footer mx-3 col-12 col-md-6">
+                    <a class="btn bg-gradient-warning mt-4 w-50" th:href="@{/users/add}">Add a new user</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+</body>
+</html>

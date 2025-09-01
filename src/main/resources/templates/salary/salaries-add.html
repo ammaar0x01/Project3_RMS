@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RMS - Salary, Add</title>
+
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>
+
+    <style>
+        section{
+            overflow:hidden;
+            background-color: rgba(93,0,136,.8);
+            background-blend-mode: multiply;
+            background-image: url('../assets/img/curved-images/curved14.jpg');
+            background-position:center;
+            background-size:cover;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+        }
+        section .card{ background-color: rgba(0,0,0,.5); border-radius:20px; }
+        .card h1, .card h5, label { color:#fff; }
+    </style>
+</head>
+
+<body>
+<section class="min-vh-100">
+    <div class="row m-2 mt-4">
+        <div class="col-xl-5 col-lg-6 col-md-7 mx-auto">
+            <div class="card z-index-0">
+                <h1 class="p-2 pb-0 pt-4 display-4 text-center text-light">Salary</h1>
+                <h5 class="lead text-center text-light">Add salary record</h5>
+
+                <div class="card-body">
+                    <form role="form text-left" method="POST" th:action="@{/salaries/add}" th:object="${salaryDTO}">
+
+                        <label class="lead">Employee</label>
+                        <div class="mb-3">
+                            <select class="form-select" th:field="${salaryDTO.employeeId}">
+                                <option value="" disabled selected>Select employee…</option>
+                                <option th:each="e : ${employees}" th:value="${e.id}"
+                                        th:text="${e.empFirstName + ' ' + e.empLastName}">Emp</option>
+                            </select>
+                            <p th:if="${#fields.hasErrors('employeeId')}" th:errorclass="text-warning" th:errors="${salaryDTO.employeeId}"></p>
+                        </div>
+
+                        <label class="lead">Amount</label>
+                        <div class="mb-3">
+                            <input type="number" step="0.01" min="0" class="form-control" th:field="${salaryDTO.amount}" placeholder="0.00">
+                            <p th:if="${#fields.hasErrors('amount')}" th:errorclass="text-warning" th:errors="${salaryDTO.amount}"></p>
+                        </div>
+
+                        <label class="lead">Payment method</label>
+                        <div class="mb-3">
+                            <input class="form-control" th:field="${salaryDTO.method}" placeholder="Bank / Cash / EFT">
+                            <p th:if="${#fields.hasErrors('method')}" th:errorclass="text-warning" th:errors="${salaryDTO.method}"></p>
+                        </div>
+
+                        <label class="lead">Last payment</label>
+                        <div class="mb-3">
+                            <input type="date" class="form-control" th:field="${salaryDTO.lastPayment}">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="offset-sm-4 col-sm-4 d-grid">
+                                <button type="submit" class="btn btn-primary">Add Salary</button>
+                            </div>
+                            <div class="col-sm-4 d-grid">
+                                <a class="btn btn-outline-light" th:href="@{/salaries}">Cancel</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
