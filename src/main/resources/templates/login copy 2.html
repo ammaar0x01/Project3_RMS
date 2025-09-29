@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <title>Login</title>
+
+
+    <!-- ------------------------------- -->
+    <!-- for testing -->
+
+    <!-- Fonts and icons -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+ 
+  <!-- Nucleo Icons -->
+  <link href="../static/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../static/assets/css/nucleo-svg.css" rel="stylesheet" />
+ 
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+ 
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../static/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+
+  <!-- STYLES  -->
+  <link rel="stylesheet" href="../static/css/main.css" />
+  <link rel="stylesheet" href="../static/css/section-edit.css">
+
+    <!-- ------------------------------- -->
+
+
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+
+    <!-- STYLES  -->
+    <link rel="stylesheet" href="../css/main.css" />
+   
+</head>
+<body>
+    <!-- <h1>Login</h1>
+    <form action="/login" method="post">
+        Username: <input type="text" name="username" /><br/>
+        Password: <input type="password" name="password" /><br/>
+        <button type="submit">Login</button>
+    </form>
+
+    <a href="/register">I don't have an account</a> -->
+
+
+  <section class="min-vh-100">
+    <div class="row m-2 mt-5 ">
+
+        <div class="col-xl-5 col-lg-7 col-md-8 mx-auto center">
+            <div class="card z-index-0">
+                <h3 class="text-center text-light px-4 pt-5">Login</h3>
+
+                <div class="card-body">
+                    <form method="POST" action="/login">
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input class="form-control text-center" placeholder="Username">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input class="form-control text-center" placeholder="Password">
+                            </div>
+                        </div>
+
+
+                        <div class="mb-1 button-section">
+                            <a class="w-100">
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </a>
+
+                            <a href="/register" class="text-center">
+                                I don't have an account
+                            </a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
