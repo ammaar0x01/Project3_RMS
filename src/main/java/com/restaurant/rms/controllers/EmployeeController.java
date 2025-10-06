@@ -61,6 +61,7 @@ public class EmployeeController {
     // ADD
     @GetMapping("/add")
     public String showAddPage(Model model) {
+        System.out.println("\n(EMPLOYEE), add page");
         EmployeeDTO empDTO = new EmployeeDTO();
         model.addAttribute("employeeDTO", empDTO);
         return "employee/employees-add";
@@ -71,6 +72,8 @@ public class EmployeeController {
             @Valid @ModelAttribute EmployeeDTO eDTO,
             BindingResult result
     ) {
+        System.out.println("\n(EMPLOYEE), adding record");
+
         // checking for errors from the form
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors());

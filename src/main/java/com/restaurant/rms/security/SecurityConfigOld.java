@@ -1,6 +1,6 @@
 //package com.restaurant.rms.security;
-
-
+//
+//
 //import jakarta.servlet.ServletException;
 //import jakarta.servlet.http.HttpServletRequest;
 //import jakarta.servlet.http.HttpServletResponse;
@@ -96,10 +96,10 @@
 //    }
 //
 //}
-
-
+//
+//
 // for 404 issue
-
+//
 //@Configuration
 //@EnableWebSecurity
 //public class SecurityConfig {

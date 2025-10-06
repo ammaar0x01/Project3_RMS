@@ -327,19 +327,19 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Table number(s)
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Table number
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Main
-                                        guest
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Main guest
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Number of people
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Status
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        Phone number
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Reservation time
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
@@ -351,30 +351,49 @@
                                 <!-- t-row1 -->
                                 <tr th:each="reservation : ${reservations}">
 
-                                    <td class="align-middle text-center">
+<!--                                    <td class="align-middle text-center">-->
+                                    <td class="ps-4">
                                         <h6 class="mb-0 text-sm" th:text="${reservation.getTableId()}"></h6>
                                     </td>
+
                                     <td>
-                                        <div class="d-flex px-2 py-1">
+                                        <h6 class="mb-0 text-sm"
+                                            th:text="*{reservation.getCustomerGroup().getFirstName() + ' ' + reservation.getCustomerGroup().getLastName()}">
 
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm"
-                                                    th:text="*{reservation.getCustomerGroup().getFirstName()}"></h6>
+                                        </h6>
+                                    </td>
 
-                                            </div>
-                                        </div>
+<!--                                    <td>-->
+<!--                                        <div class="d-flex px-2 py-1">-->
+
+<!--                                            <div class="d-flex flex-column justify-content-center">-->
+<!--                                                <h6 class="mb-0 text-sm"-->
+<!--                                                    th:text="*{reservation.getCustomerGroup().getFirstName() + ' ' + reservation.getCustomerGroup().getLastName()}">-->
+
+<!--                                                </h6>-->
+
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </td>-->
+
+                                    <td>
+                                        <h6 class="mb-0 text-sm"
+                                            th:text="${reservation.getCustomerGroup().getNumberOfPeople()}">
+                                        </h6>
                                     </td>
                                     <td>
                                         <h6 class="mb-0 text-sm"
-                                            th:text="${reservation.getCustomerGroup().getNumberOfPeople()}"></h6>
+                                            th:text="${reservation.getCustomerGroup().getPhoneNumber()}">
+                                        </h6>
 
                                     </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <span class="badge badge-sm bg-gradient-success">Occupied</span>
+<!--                                    -->
+<!--                                    <td class="align-middle text-center text-sm">-->
+<!--                                        <span class="badge badge-sm bg-gradient-success">Occupied</span>-->
 
-                                    </td>
+<!--                                    </td>-->
 
-                                    <td class="align-middle text-center">
+                                    <td class="">
                                         <h6 class="mb-0 text-sm" th:text="${reservation.reservationDateTime}"></h6>
                                     </td>
 

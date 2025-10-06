@@ -13,9 +13,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-//@Table(name="OrderTest")
-@Table(name="Orders")
-//@Table(name="Order")
+//@Table(name="Orders")
+@Table(name="FoodOrder")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

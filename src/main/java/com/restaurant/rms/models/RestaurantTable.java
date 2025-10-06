@@ -9,7 +9,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 @Entity
-//@Table(name="RestaurantTableTest")
 @Table(name="RestaurantTable")
 public class RestaurantTable {
     @Id

@@ -329,16 +329,16 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Table Number
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Capacity
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                        Status
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Last Cleaned
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
@@ -362,21 +362,29 @@
 <!--                                        </div>-->
 <!--                                    </td>-->
 
-                                    <td class="align-middle text-center">
+                                    <td class="ps-4">
+<!--                                    <td class="align-middle text-center">-->
                                         <h6 class="mb-0 text-sm table-number" th:text="${table.tableNumber}"></h6>
                                     </td>
 
-                                    <td class="align-middle text-center">
+                                    <td>
                                         <p class="text-xs font-weight-bold mb-0" th:text="${table.capacity}"></p>
                                     </td>
 
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${table.status}">
+                                    <td>
+<!--                                        <span class="text-secondary text-xs font-weight-bold"-->
+<!--                                              th:text="${table.status}">-->
+                                            <span class="badge badge-sm bg-gradient-success"
+                                                  th:text="${table.status}">
+
                                         </span>
+                                    <td class="align-middle text-center text-sm">
+                                        <!--                                        <span class="badge badge-sm bg-gradient-success">Occupied</span>-->
+
+                                        <!--                                    </td>-->
                                     </td>
 
-                                    <td class="align-middle text-center">
+                                    <td>
                                         <span class="text-secondary text-xs font-weight-bold"
                                               th:text="${table.lastCleaned}">
                                         </span>

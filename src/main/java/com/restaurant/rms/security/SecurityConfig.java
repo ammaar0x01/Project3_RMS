@@ -40,9 +40,17 @@ public class SecurityConfig {
 		// AI //
 		http.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/register", "/login", "/css/**", "/js/**", "/images/**", "/assets/**")
+						.requestMatchers(
+								"/register",
+								"/login",
+								"/css/**",
+								"/js/**",
+								"/images/**",
+								"/assets/**"
+						)
 						.permitAll()
-						.anyRequest().authenticated()
+						.anyRequest()
+						.authenticated()
 				)
 				.formLogin(form -> form
 						.loginPage("/login")

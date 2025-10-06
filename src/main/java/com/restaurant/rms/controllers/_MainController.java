@@ -31,31 +31,31 @@ public class _MainController {
 
     // -------------------------------
     // returns details about a user who logged in
-    @GetMapping("/user")
-    public Principal user(Principal principalUser){
-        return principalUser;
-    }
-
-    @GetMapping("/profile")
-    public String profile(OAuth2AuthenticationToken token, Model model){
-        model.addAttribute("name", token.getPrincipal().getAttribute("name"));
-        model.addAttribute("email", token.getPrincipal().getAttribute("email"));
-        model.addAttribute("photo", token.getPrincipal().getAttribute("picture"));
-        return "./user-page";
-    }
+//    @GetMapping("/user")
+//    public Principal user(Principal principalUser){
+//        return principalUser;
+//    }
+//
+//    @GetMapping("/profile")
+//    public String profile(OAuth2AuthenticationToken token, Model model){
+//        model.addAttribute("name", token.getPrincipal().getAttribute("name"));
+//        model.addAttribute("email", token.getPrincipal().getAttribute("email"));
+//        model.addAttribute("photo", token.getPrincipal().getAttribute("picture"));
+//        return "./user-page";
+//    }
     // -------------------------------
 
     // older //
-    @RequestMapping("/user-profile")
-    public String profile(){
-        return "profile";
-    }
-
-    @RequestMapping("/sign-in")
-    public String signIn(){
-        return "_general/sign-in";
-//        return "./custom-login";
-    }
+//    @RequestMapping("/user-profile")
+//    public String profile(){
+//        return "profile";
+//    }
+//
+//    @RequestMapping("/sign-in")
+//    public String signIn(){
+//        return "_general/sign-in";
+////        return "./custom-login";
+//    }
 
 //    @GetMapping("/login")
 //    public String logIn(){

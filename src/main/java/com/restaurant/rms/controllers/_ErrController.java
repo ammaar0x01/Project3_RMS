@@ -9,7 +9,6 @@ public class _ErrController implements ErrorController {
 
     @RequestMapping("/error")
     public String handleError(){
-        return "404";
+        return "_general/404";
     }
-
 }

@@ -60,9 +60,9 @@
 
                 <div class="card-body">
                     <form method="POST" th:object="${customerGroupPaymentDTO}">
-                        <input type="hidden"
-                               th:name="${_csrf.parameterName}"
-                               th:value="${_csrf.token}" />
+<!--                        <input type="hidden"-->
+<!--                               th:name="${_csrf.parameterName}"-->
+<!--                               th:value="${_csrf.token}" />-->
                         <input type="hidden" th:field="*{paymentId}">
                         <input type="hidden" th:field="*{customerGroupId}">
 
