@@ -14,5 +14,4 @@ public class _MainController {
     public String home(){
         return "_general/home";
     }
-
 }

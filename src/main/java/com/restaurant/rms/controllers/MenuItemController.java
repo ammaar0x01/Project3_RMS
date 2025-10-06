@@ -1,6 +1,5 @@
 package com.restaurant.rms.controllers;
 
-
 import com.restaurant.rms.models.DTO.MenuItemDTO;
 import com.restaurant.rms.models.MenuItem;
 import com.restaurant.rms.repository.MenuItemRepo;
@@ -14,34 +13,28 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-// Create
 @Controller
 @RequestMapping("/menu-items")
-//@RequestMapping("/menu-items")
 public class MenuItemController {
     @Autowired
     private MenuItemRepo menuItemRepo;
 
-    // READ
+    // READ //
     @RequestMapping("")
     public String items(Model model) {
         List<MenuItem> items = menuItemRepo.findAll(Sort.by(Sort.Direction.DESC, "menuItemId"));
         model.addAttribute("menuItems", items);
         return "menu-item/menu-items";
     }
-    /// ///////////////////////////////////////////////////////////////////////////
 
 
-    // ADD
-    // add menu item form
+    // ADD //
     @GetMapping("/add")
     public String MenuItemAdd(Model model) {
         MenuItemDTO menuItemDTO = new MenuItemDTO();
         model.addAttribute("menuItemDTO", menuItemDTO);
-//        model.addAttribute("menuItems", menuItems);
         return "menu-item/menu-items-add";
     }
-    // create new menu item
     @PostMapping("/add")
     public String createMenuItem(
             @Valid @ModelAttribute MenuItemDTO mDTO,
@@ -61,22 +54,22 @@ public class MenuItemController {
                 mDTO.getMenuItemEstServeTime()
         );
 
-        // database save
         this.menuItemRepo.save(menuItem);
         System.out.println("\n***MenuItem-object \n(" + menuItem + ") \nadded successfully***");
         return "redirect:/menu-items";
     }
 
-    // EDIT
-    //view existing for update
+
+    // EDIT //
     @GetMapping("/edit")
-    public String showEditForm(@RequestParam(value = "id")int id, Model model) {
+    public String showEditForm(
+            @RequestParam(value="id") int id,
+            Model model
+    ) {
         System.out.println("\n***Getting...");
         try {
-
             MenuItemDTO menuItemDTO = new MenuItemDTO();
             MenuItem item = menuItemRepo.findById(id).get();
-
 
             menuItemDTO.setMenuItemName(item.getMenuItemName());
             menuItemDTO.setMenuItemNum(item.getMenuItemNum());
@@ -84,18 +77,15 @@ public class MenuItemController {
             menuItemDTO.setMenuItemCategory(item.getMenuItemCategory());
             menuItemDTO.setMenuItemEstServeTime(item.getMenuItemEstServeTime());
 
-//            model.addAttribute("tableDTO", table1DTO);
             model.addAttribute("menuItemDTO", menuItemDTO);
             model.addAttribute("id", id);
             return "menu-item/menu-items-edit";
-
-
-        } catch (Exception er) {
+        }
+        catch (Exception er) {
             System.out.println("Error: " + er.getMessage());
             return "redirect:/menu-items";
         }
     }
-    //update existing table no
     @PostMapping("/edit")
     public String updateTable(
             Model model,
@@ -117,9 +107,6 @@ public class MenuItemController {
                 model.addAttribute("id", id);
                 return "menu-item/menu-items-edit";
             }
-
-
-
             item.setMenuItemName(menuItemDTO.getMenuItemName());
             item.setMenuItemNum(menuItemDTO.getMenuItemNum());
             item.setMenuItemPrice(menuItemDTO.getMenuItemPrice());
@@ -136,25 +123,21 @@ public class MenuItemController {
         return "redirect:/menu-items";
 
     }
-    /// ///////////////////////////////////////////////////////////////////////////
 
-    // DELETE
+
+    // DELETE //
     @GetMapping("/delete")
     public String deleteTable(@RequestParam int id) {
         try {
             MenuItem menuItems = menuItemRepo.findById(id).get();
-
-            // database delete
             menuItemRepo.delete(menuItems);
             System.out.println("\n***Successful deletion of:");
             System.out.println(menuItems);
-
-        } catch (Exception ex) {
+        }
+        catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
         System.out.println("\n***Menu Item with id " + id + " deleted successfully***");
         return "redirect:/menu-items";
     }
-    /// ///////////////////////////////////////////////////////////////////////////
 }

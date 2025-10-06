@@ -1,15 +1,6 @@
 
+-- 1.
 -- Restaurant tables
-INSERT INTO `rms-t4-2`.`restaurant_table` (`id`, `capacity`, `last_cleaned`, `status`, `table_number`)
-VALUES
-(1, 4, '2025-10-05 14:30:00', 'available', 1),
-(2, 2, '2025-10-06 09:15:00', 'occupied', 2),
-(3, 6, '2025-10-04 20:45:00', 'dirty', 3),
-(4, 4, '2025-10-06 11:00:00', 'available', 4),
-(5, 8, '2025-10-05 22:10:00', 'reserved', 5);
-
-
--- Restaurant tables; version2
 INSERT INTO `rms-t4-2`.`restaurant_table` (`id`, `capacity`, `last_cleaned`, `status`, `table_number`)
 VALUES
 (1, 4, '2025-10-05 14:30:00', 'available', 1),
@@ -18,25 +9,8 @@ VALUES
 (4, 4, '2025-10-06 11:00:00', 'available', 4),
 (5, 8, '2025-10-05 22:10:00', 'available', 5);
 
-
+-- 2.
 -- Reservations
-INSERT INTO `rms-t4-2`.`reservation`
-(`reservation_uuid`,
- `reservation_date_time`,
- `reservation_time_end`,
- `reservation_time_max`,
- `reservation_time_start`,
- `customer_group_id`,
- `table_id`)
-VALUES
-('6b1d8d0a-03d4-4e1f-bc5f-cccebd849b11', '2025-10-06 10:00:00', '2025-10-10 19:30:00', '2025-10-10 20:00:00', '2025-10-10 18:30:00', 1, 101),
-('29c1a812-5c25-4ed2-8ea5-61acaf55a9e2', '2025-10-06 11:15:00', '2025-10-11 20:45:00', '2025-10-11 21:15:00', '2025-10-11 20:00:00', 2, 102),
-('47d1f8a3-5a1d-4d4e-a9f5-dbb1de40312f', '2025-10-06 12:45:00', '2025-10-12 18:15:00', '2025-10-12 18:45:00', '2025-10-12 17:15:00', 3, 103),
-('a921f9c0-1933-4d38-8179-6a14adbdc66f', '2025-10-06 13:30:00', '2025-10-13 21:00:00', '2025-10-13 21:30:00', '2025-10-13 20:00:00', 4, 104),
-('b83d5f91-7763-4aef-9f4d-df9f8e8378f7', '2025-10-06 14:00:00', '2025-10-14 19:00:00', '2025-10-14 19:30:00', '2025-10-14 18:00:00', 5, 105);
-
-
--- Reservations; version2
 INSERT INTO `rms-t4-2`.`reservation`
 (`reservation_uuid`,
  `reservation_date_time`,
@@ -52,8 +26,7 @@ VALUES
 ('a921f9c0-1933-4d38-8179-6a14adbdc66f', '2025-10-06 13:30:00', '2025-10-13 21:00:00', '2025-10-13 21:30:00', '2025-10-13 20:00:00', 4, 4),
 ('b83d5f91-7763-4aef-9f4d-df9f8e8378f7', '2025-10-06 14:00:00', '2025-10-14 19:00:00', '2025-10-14 19:30:00', '2025-10-14 18:00:00', 5, 5);
 
--- --------------------------------------------------
-
+-- 3.
 -- User
 INSERT INTO `rms-t4-2`.`user` (`id`, `password`, `role`, `username`) VALUES
 (1, 'pass1234', 'ADMIN', 'admin1'),
@@ -62,7 +35,7 @@ INSERT INTO `rms-t4-2`.`user` (`id`, `password`, `role`, `username`) VALUES
 (4, 'manager1', 'MANAGER', 'manager_sara'),
 (5, 'kitchen789', 'KITCHEN', 'chef_mike');
 
-
+-- 4.
 -- User seq
 INSERT INTO `rms-t4-2`.`user_seq` (`next_val`) VALUES
 (6),
@@ -71,6 +44,7 @@ INSERT INTO `rms-t4-2`.`user_seq` (`next_val`) VALUES
 (9),
 (10);
 
+-- 5.
 -- Menu_item
 INSERT INTO `rms-t4-2`.`menu_item`
 (`menu_item_id`, `menu_item_category`, `menu_item_est_serve_time`, `menu_item_name`, `menu_item_num`, `menu_item_price`)
@@ -81,6 +55,7 @@ VALUES
 (4, 'Beverage', 5, 'Fresh Lemonade', 'BV104', 3.25),
 (5, 'Main Course', 25, 'Pasta Alfredo', 'MC105', 11.50);
 
+-- 6.
 -- Food_order
 INSERT INTO `rms-t4-2`.`food_order`
 (`id`, `estimated_wait_time`, `order_time`, `status`, `total_price`)
@@ -91,6 +66,7 @@ VALUES
 (4, 20, '2025-10-06 13:30:00', 'CANCELLED', 0.00),
 (5, 35, '2025-10-06 14:00:00', 'IN_PROGRESS', 42.10);
 
+-- 7.
 -- Expense
 INSERT INTO `rms-t4-2`.`expense`
 (`id`, `expense_amount`, `expense_date`, `expense_name`)
@@ -101,18 +77,8 @@ VALUES
 (4, 210.00, '2025-10-02', 'Beverage Inventory'),
 (5, 120.25, '2025-10-01', 'Electricity Bill');
 
+-- 8.
 -- Employee_shift
-INSERT INTO `rms-t4-2`.`employee_shift`
-(`id`, `date_now`, `end_time`, `start_time`)
-VALUES
-(1, '2025-10-06', '17:00:00', '09:00:00'),
-(2, '2025-10-06', '22:00:00', '14:00:00'),
-(3, '2025-10-06', '18:00:00', '10:00:00'),
-(4, '2025-10-05', '20:00:00', '12:00:00'),
-(5, '2025-10-05', '16:00:00', '08:00:00');
-
-
--- NEWER
 INSERT INTO `rms-t4-2`.`employee_shift`
 (`id`, `date_now`, `end_time`, `start_time`)
 VALUES
@@ -122,7 +88,7 @@ VALUES
 (4, '2025-10-05', '2025-10-05 20:00:00.000000', '2025-10-05 12:00:00.000000'),
 (5, '2025-10-05', '2025-10-05 16:00:00.000000', '2025-10-05 08:00:00.000000');
 
-
+-- 9.
 -- Employee_salary
 INSERT INTO `rms-t4-2`.`employee_salary`
 (`employee_payment_id`, `employee_payment_amount`, `employee_payment_method`, `last_payment`, `employee_id`)
@@ -133,6 +99,7 @@ VALUES
 (4, 2950.00, 'CHEQUE', '2025-09-30', 4),
 (5, 3300.00, 'BANK_TRANSFER', '2025-09-30', 5);
 
+-- 10.
 -- Employee
 INSERT INTO `rms-t4-2`.`employee`
 (`id`, `emp_address`, `emp_contact_num`, `emp_email`, `emp_first_name`, `emp_last_name`, `emp_start_date`, `role`)
@@ -143,6 +110,7 @@ VALUES
 (4, '321 Maple Blvd', '555-4321', 'mark.jones@example.com', 'Mark', 'Jones', '2023-11-05', 'Cleaner'),
 (5, '654 Cedar St', '555-6789', 'linda.kim@example.com', 'Linda', 'Kim', '2025-01-10', 'Cashier');
 
+-- 11.
 -- Customer_group
 INSERT INTO `rms-t4-2`.`customer_group`
 (`customer_group_id`, `first_name`, `last_name`, `number_of_people`, `phone_number`)
@@ -153,6 +121,7 @@ VALUES
 (4, 'David', 'Brown', 5, '555-1004'),
 (5, 'Eve', 'Taylor', 6, '555-1005');
 
+-- 12.
 -- Customer_group_payment
 INSERT INTO `rms-t4-2`.`customer_group_payment`
 (`payment_id`, `payment_amount`, `payment_date_time`, `payment_transaction_type`, `customer_group_id`)
@@ -164,4 +133,3 @@ VALUES
 (5, 120.00, '2025-10-06 14:30:00', 'CARD', 5);
 
 -- ------------------------------------------------------
-

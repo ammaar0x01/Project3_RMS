@@ -19,20 +19,25 @@ import java.util.List;
 public class RestaurantTableController {
     @Autowired
     private RestaurantTableRepo tableRepo;
+    // --------------------------------
 
-    // POST
-    // add table form
+    // GET ALL //
+    @RequestMapping("")
+    public String tables(Model model) {
+        List<RestaurantTable> tables = tableRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        model.addAttribute("restaurantTables", tables);
+        return "restaurant-table/restaurant-tables";
+    }
+
+
+    // ADD //
     @GetMapping("/add")
-//    @RequestMapping("/tables-add")
     public String tableAdd(Model model) {
         RestaurantTableDTO tableDTO = new RestaurantTableDTO();
         model.addAttribute("tableDTO", tableDTO);
         return "restaurant-table/restaurant-tables-add";
     }
-
-    // create new table
     @PostMapping("/add")
-//    @PostMapping("/tables-add")
     public String createTable(
             @Valid @ModelAttribute RestaurantTableDTO tDTO,
             BindingResult result
@@ -40,11 +45,9 @@ public class RestaurantTableController {
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors());
             return "restaurant-table/restaurant-tables-add";
-
         }
 
         Date lastCleaned = new Date();
-
         RestaurantTable tables = new RestaurantTable(
                 tDTO.getTableNumber(),
                 tDTO.getCapacity(),
@@ -55,23 +58,16 @@ public class RestaurantTableController {
         // database save
         this.tableRepo.save(tables);
         System.out.println("\n***Table-object \n(" + tables + ") \nadded successfully***");
-
         return "redirect:/tables";
     }
-    /// ///////////////////////////////////////////////////////////////////////
 
-    // UPDATE
-    // view existing for update
+
+    // EDIT //
     @GetMapping("/edit")
     public String showEditForm(@RequestParam(value = "id")int id, Model model)  {
         System.out.println("\n***Getting...");
 
-
-
-
         try {
-            //RestaurantTable table = tableRepo.findById(id).orElse(null);
-
             RestaurantTableDTO table1DTO = new RestaurantTableDTO();
             RestaurantTable table = tableRepo.findById(id).get();
 
@@ -84,16 +80,12 @@ public class RestaurantTableController {
             model.addAttribute("restaurantTableDTO", table1DTO);
             model.addAttribute("id", id);
             return "restaurant-table/restaurant-tables-edit";
-
-        } catch (Exception er) {
+        }
+        catch (Exception er) {
             System.out.println("Error: " + er.getMessage());
             return "redirect:/tables";
         }
     }
-
-
-
-    //update existing table no
     @PostMapping("/edit")
     public String updateTable(
             Model model,
@@ -117,19 +109,9 @@ public class RestaurantTableController {
                 return "restaurant-table/restaurant-tables-edit";
             }
 
-
-            // Date lastCleaned = new Date();
-
             table.setTableNumber(tDTO.getTableNumber());
             table.setCapacity(tDTO.getCapacity());
             table.setStatus(tDTO.getStatus());
-
-//        RestuarantTable table = new RestuarantTable(
-//                tDTO.getTableNumber(),
-//                tDTO.getCapacity(),
-//                tDTO.getStatus(),
-//                lastCleaned
-            //  );
 
             this.tableRepo.save(table);
             System.out.println("\n***Table-object \n(" + table + ") \nupdated successfully***");
@@ -140,9 +122,9 @@ public class RestaurantTableController {
         }
         return "redirect:/tables";
     }
-    /// ///////////////////////////////////////////////////////////////////////////
 
-    // DELETE
+
+    // DELETE //
     @GetMapping("/delete")
     public String deleteTable(@RequestParam int id) {
         try {
@@ -160,24 +142,5 @@ public class RestaurantTableController {
         System.out.println("\n***Table with id " + id + " deleted successfully***");
         return "redirect:/tables";
     }
-    /// ///////////////////////////////////////////////////////////////////////////
 
-    // GET
-    @RequestMapping("")
-//    @RequestMapping("/tables")
-    public String tables(Model model) {
-        List<RestaurantTable> tables = tableRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
-//        List<RestaurantTable> tables = tableRepo.findAll(Sort.by(Sort.Direction.DESC, "table_id"));
-        model.addAttribute("restaurantTables", tables);
-        return "restaurant-table/restaurant-tables";
-    }
-    /// ///////////////////////////////////////////////////////////////////////////
-
-
-//    @GetMapping("/tables-list")
-//    public String tablesList(Model model) {
-//        List<RestaurantTable> tables = tableRepo.findAll(Sort.by(Sort.Direction.DESC, "table_id"));
-//        model.addAttribute("tables", tables);
-//        return "restaurant-table/tables-list";
-//    }
 }

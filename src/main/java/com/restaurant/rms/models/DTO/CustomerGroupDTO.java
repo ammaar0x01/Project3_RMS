@@ -63,15 +63,17 @@ public class CustomerGroupDTO {
     //    @NotNull
     private String lastName;
     //    @NotNull
+
     @NotNull
     @Pattern(
             regexp = "^(\\+\\d{1,3}[- ]?)?\\d{10}$",
             message = "Phone number must be valid"
     )
-
     private String phoneNumber;
+
     @Min(value = 1, message = "At least one customer required")
     private int numberOfPeople;
+    // --------------------------------------
 
     public int getCustomerGroupId() {
         return customerGroupId;

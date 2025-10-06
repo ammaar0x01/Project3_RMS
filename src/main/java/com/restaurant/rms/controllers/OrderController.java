@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * ORDER
- * <br>
- * */
 @Controller
 @RequestMapping("/orders")
 public class OrderController {
@@ -42,7 +38,6 @@ public class OrderController {
         model.addAttribute("orderDTO", orderDTO);
         return "order/orders-add";
     }
-
     @PostMapping("/add")
     public String addOrder(
             @Valid @ModelAttribute OrderDTO orderDTO,
@@ -95,8 +90,6 @@ public class OrderController {
         }
         return "order/orders-edit";
     }
-
-    // Editing an existing record
     @PostMapping("/edit")
     public String editOrder(
             Model model,
@@ -151,18 +144,4 @@ public class OrderController {
         return "redirect:/orders";
     }
     // --------------------------------------------
-
-
-    // primarily for waiters and kitchen-staff
-    @RequestMapping("/simple-mode")
-    public String ordersOnly(){
-        return "order/orders-only";
-    }
-
-    @RequestMapping("/simple-mode/add")
-    public String ordersOnyAdd(){
-        return "order/orders-only-add";
-    }
-    // --------------------------------------------
-
 }

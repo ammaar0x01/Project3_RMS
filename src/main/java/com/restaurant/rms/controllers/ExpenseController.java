@@ -24,8 +24,7 @@ public class ExpenseController {
     private ExpenseRepo ExpensesRepo;
     // -----------------------------
 
-    // READ
-//    @GetMapping({"", "/"})
+    // READ //
     @GetMapping("")
     public String showExpenses(Model model) {
         System.out.println("\nEmployee-expense. get all");
@@ -40,7 +39,7 @@ public class ExpenseController {
         return "expense/expenses";
     }
 
-    // ADD
+    // ADD //
     @GetMapping("/add")
     public String showCreatePage(Model model) {
         System.out.println("Employee-expense. add page. get");
@@ -74,7 +73,7 @@ public class ExpenseController {
         return "redirect:/expenses";
     }
 
-    // UPDATE
+    // EDIT //
     @GetMapping("/edit")
     public String showEditPage(Model model, @RequestParam int id) {
         System.out.println("Employee-expense. edit page. get");
@@ -131,6 +130,5 @@ public class ExpenseController {
             System.out.println("Exception: " + ex.getMessage());
         }
         return "redirect:/expenses";
-//        return "redirect:/Expenses";
     }
 }

@@ -122,9 +122,13 @@ public class MenuItem {
 //@OneToMany(mappedBy = "menuItem", cascade = CascadeType.ALL, orphanRemoval = true)
 //private List<OrderDetail> orderDetail = new ArrayList<>();
 
-    public MenuItem() {}
-    public MenuItem(String menuItemName, String menuItemNum, double menuItemPrice, String menuItemCategory
-            ,int menuItemEstServeTime
+    public MenuItem(){}
+    public MenuItem(
+            String menuItemName,
+            String menuItemNum,
+            double menuItemPrice,
+            String menuItemCategory,
+            int menuItemEstServeTime
     ) {
         this.menuItemName = menuItemName;
         this.menuItemNum = menuItemNum;
@@ -132,7 +136,7 @@ public class MenuItem {
         this.menuItemCategory = menuItemCategory;
         this.menuItemEstServeTime = menuItemEstServeTime;
     }
-
+    // ---------------------------------
 
     public int getMenuItemId() {
         return menuItemId;

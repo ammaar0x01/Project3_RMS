@@ -2,7 +2,6 @@ package com.restaurant.rms.controllers;
 
 import com.restaurant.rms.models.Employee;
 import com.restaurant.rms.models.DTO.EmployeeDTO;
-import com.restaurant.rms.models.EmployeeSalary;
 import com.restaurant.rms.repository.EmployeeRepo;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +14,6 @@ import java.util.Date;
 import java.util.List;
 
 
-/**
- * EMPLOYEE
- * <br>
- * Used for operations related to the Employee entity
- * */
 @Controller
 @RequestMapping("/employees")
 public class EmployeeController {
@@ -38,25 +32,8 @@ public class EmployeeController {
         model.addAttribute("employees", employees);
         return "employee/employees";
     }
-
-//    @GetMapping("/list")
-//    public String listEmployees(Model model) {
-//        List<Employee> employees = empRepo.findAll(Sort.by(Sort.Direction.DESC, "id"));
-//
-//        for (Employee e : employees){
-//            System.out.println("- " + e);
-//        }
-//        model.addAttribute("employees", employees);
-//        return "employee/employees-list";
-//    }
     // --------------------------------------------
 
-
-    // Other
-//    @GetMapping("/pay")
-//    public String employeesPay() {
-//        return "employee/employees-pay";
-//    }
 
     // ADD
     @GetMapping("/add")
@@ -66,7 +43,6 @@ public class EmployeeController {
         model.addAttribute("employeeDTO", empDTO);
         return "employee/employees-add";
     }
-
     @PostMapping("/add")
     public String addEmployee(
             @Valid @ModelAttribute EmployeeDTO eDTO,
@@ -74,13 +50,11 @@ public class EmployeeController {
     ) {
         System.out.println("\n(EMPLOYEE), adding record");
 
-        // checking for errors from the form
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors());
             return "employee/employees-add";
         }
 
-        // creating the object
         Date currentDate = new Date();
         Employee emp = new Employee(
                 eDTO.getEmpFirstName(),
@@ -91,18 +65,15 @@ public class EmployeeController {
                 eDTO.getEmpEmail()
         );
 
-        // saving to database
         this.empRepo.save(emp);
         System.out.println("\n***Employee-object \n(" + emp + ") \nadded successfully***");
 
-        // re-directing
         return "redirect:/employees";
     }
     // --------------------------------------------
 
 
     // EDIT
-    // getting existing data of the product and displaying it on the update page
     @GetMapping("/edit")
     public String showEditPage(
             Model model,
@@ -126,8 +97,6 @@ public class EmployeeController {
         }
         return "employee/employees-edit";
     }
-
-    // Editing an existing record
     @PostMapping("/edit")
     public String editEmployee(
             Model model,
@@ -145,7 +114,6 @@ public class EmployeeController {
                 return "employee/employees-edit";
             }
 
-            // updating other details
             employee.setRole(EmployeeDTO.getRole());
             employee.setEmpFirstName(EmployeeDTO.getEmpFirstName());
             employee.setEmpLastName(EmployeeDTO.getEmpLastName());
@@ -171,7 +139,6 @@ public class EmployeeController {
         try {
             Employee employee = empRepo.findById(id).get();
 
-            // delete from database
             empRepo.delete(employee);
             System.out.println("\n***Successful deletion of:");
             System.out.println(employee);
@@ -183,5 +150,4 @@ public class EmployeeController {
         return "redirect:/employees";
     }
     // --------------------------------------------
-
 }

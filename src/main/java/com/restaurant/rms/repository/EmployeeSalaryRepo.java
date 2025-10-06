@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeSalaryRepo extends JpaRepository<EmployeeSalary, Integer> {
-//public interface EmployeeSalaryRepo extends JpaRepository<EmployeeSalary, Long> {
 }
