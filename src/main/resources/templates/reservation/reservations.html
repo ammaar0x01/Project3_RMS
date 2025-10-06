@@ -353,7 +353,10 @@
 
 <!--                                    <td class="align-middle text-center">-->
                                     <td class="ps-4">
-                                        <h6 class="mb-0 text-sm" th:text="${reservation.getTableId()}"></h6>
+
+<!--                                        <h6 class="mb-0 text-sm" th:text="${reservation.getRestaurantTable()}"></h6>-->
+                                        <h6 class="mb-0 text-sm" th:text="${reservation.getRestaurantTable().getTableNumber()}"></h6>
+<!--                                        <h6 class="mb-0 text-sm" th:text="${reservation.getTableId()}"></h6>-->
                                     </td>
 
                                     <td>

@@ -306,13 +306,13 @@
 <!--                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">-->
 <!--                                        Date-->
 <!--                                    </th>-->
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Date
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Name
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Amount
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
@@ -337,8 +337,10 @@
 <!--                                        </div>-->
 <!--                                    </td>-->
 
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0" th:text="${emp.expenseDate}"></p>
+                                    <td class="ps-4">
+                                        <h6 class="mb-0 text-sm" th:text="${emp.expenseDate}"></h6>
+
+<!--                                        <p class="text-xs font-weight-bold mb-0" th:text="${emp.expenseDate}"></p>-->
                                     </td>
 
                                     <td>

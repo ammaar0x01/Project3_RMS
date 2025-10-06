@@ -305,19 +305,19 @@
                             <table class="table align-items-center mb-0">
                                 <thead>
                                 <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Item Name
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Item Num
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Item Price
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                        Item Category
                                     </th>
-                                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                    Estimated serve time
                               </th>
                                     <th class="text-secondary opacity-7"></th>
@@ -328,31 +328,37 @@
 
                                 <tbody>
                                 <tr th:each="item : ${menuItems}">
-
-
-                                    <td class="align-middle text-center">
+                                    <td class="ps-4">
                                         <h6 class="mb-0 text-sm menuItemName" th:text="${item.menuItemName}"></h6>
                                     </td>
 
-                                    <td class="align-middle text-center">
+                                    <td>
                                         <p class="text-xs font-weight-bold mb-0" th:text="${item.menuItemNum}"></p>
                                     </td>
 
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${item.menuItemPrice}">
-                                        </span>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0" th:text="${'R ' + item.menuItemPrice}"></p>
                                     </td>
 
-                                    <td class="align-middle text-center">
+<!--                                    <td class="align-middle text-center">-->
+<!--                                        <span class="text-secondary text-xs font-weight-bold"-->
+<!--                                              th:text="${item.menuItemPrice}">-->
+<!--                                        </span>-->
+<!--                                    </td>-->
+
+                                    <td>
                                         <p class="text-xs font-weight-bold mb-0" th:text="${item.menuItemCategory}"></p>
                                     </td>
 
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${item.menuItemEstServeTime}">
-                                        </span>
+                                    <td>
+                                        <p class="text-xs font-weight-bold mb-0" th:text="${item.menuItemEstServeTime + ' minutes'}"></p>
                                     </td>
+
+<!--                                    <td class="align-middle text-center">-->
+<!--                                        <span class="text-secondary text-xs font-weight-bold"-->
+<!--                                              th:text="${item.menuItemEstServeTime}">-->
+<!--                                        </span>-->
+<!--                                    </td>-->
 
                                     <td class="align-middle">
                                         <a

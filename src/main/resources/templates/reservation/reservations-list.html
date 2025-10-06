@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>RMS - Reservations, List</title>
+    <title>Reservations</title>
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
@@ -71,8 +71,12 @@
                                         <span th:text="${reservation.customerGroup.firstName + ' ' + reservation.customerGroup.lastName}"> </span>
                                     </td>
                                     <td class="align-middle text-center">
-                                        <span th:text="${reservation.tableId}">
+                                        <span class="mb-0 text-sm"
+                                              th:text="${reservation.getRestaurantTable().getTableNumber()}">
                                         </span>
+
+<!--                                        <span th:text="${reservation.tableId}">-->
+<!--                                        </span>-->
                                     </td>
 
                                     <td class="align-middle text-center">

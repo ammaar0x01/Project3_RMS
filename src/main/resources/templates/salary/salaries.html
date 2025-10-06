@@ -307,16 +307,16 @@
 <!--                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">-->
 <!--                                        Id-->
 <!--                                    </th>-->
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Payment-method
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Amount
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Last payment
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                         Employee Id
                                     </th>
                                     <th class="text-secondary opacity-7"></th>
@@ -338,8 +338,10 @@
 <!--                                        </div>-->
 <!--                                    </td>-->
 
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0" th:text="${obj.employeePaymentMethod}"></p>
+                                    <td class="ps-4">
+                                        <h6 class="mb-0 text-sm" th:text="${obj.employeePaymentMethod}"></h6>
+
+<!--                                        <p class="text-xs font-weight-bold mb-0" th:text="${obj.employeePaymentMethod}"></p>-->
                                     </td>
 
                                     <td>

@@ -24,7 +24,8 @@ public class ReservationDTO {
     private LocalDateTime reservationTimeEnd;
 
 //    @Min(value = 1, message = "Table Id must be a positive number")
-    private int tableId;
+    private Integer tableId;
+//    private int tableId;
 
     @Valid
 //    @NotNull
@@ -73,11 +74,11 @@ public class ReservationDTO {
 
     }
 
-    public int getTableId() {
+    public Integer getTableId() {
         return tableId;
     }
 
-    public void setTableId(int tableId) {
+    public void setTableId(Integer tableId) {
         this.tableId = tableId;
     }
 
