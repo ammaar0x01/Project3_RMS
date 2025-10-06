@@ -6,9 +6,9 @@
 <br>
 
 - Started	18.04.25
-- Updated: 	23.09.25
+- Updated: 	06.10.25
 - Status: 	work-in-progress
-- Branch: 	auth
+- Branch: 	main
 ---
 
 Tech-stack
@@ -64,10 +64,6 @@ Download the zipped folder
 
 (Option3) Run the batch script to run the JAR file
 
----
-
-#### ERD 
-![ERD.jpg](ERD.jpg)
 ---
 
 #### Dependencies used (using the spring-initializer tool)

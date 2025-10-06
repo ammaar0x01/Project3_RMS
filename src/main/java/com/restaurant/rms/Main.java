@@ -11,6 +11,7 @@ Help
 - security,
 	> https://www.youtube.com/watch?v=oeni_9g7too
 	> https://www.youtube.com/watch?v=OoF9d0IhU6s
+		+ https://github.com/JavatechWorld/springbootLoginAndRegistrationWithMySQL
 
 ---
 
@@ -18,7 +19,7 @@ Responsibilities
 -------------------------------------------------------------------------
 Name and surname    | Classes 										   	|
 -------------------------------------------------------------------------
-Ammaar 			    | Employee, Order, OrderDetail     					|
+Ammaar 			    | Employee, Order     					|
 Salaamah			| CustomerGroup, CustomerGroupPayment, Reservation 	|
 Kyran 				| User, EmployeeSalary								|
 Leslie				| Table, MenuItem									|
