@@ -300,13 +300,27 @@
             <!--        </li>-->
         </ul>
 
-        <div class="sidenav-footer mx-3 ">
+<!--        <div class="sidenav-footer mx-3 ">-->
+<!--            <a class="btn bg-gradient-primary mt-4 w-100"-->
+<!--               href="/logout"-->
+<!--               type="button">-->
+<!--                Log out-->
+<!--            </a>-->
+<!--        </div>-->
+
+        <div class="sidenav-footer mx-3">
             <a class="btn bg-gradient-primary mt-4 w-100"
                href="/logout"
-               type="button">
+               type="button"
+               onclick="return confirmLogout();">
                 Log out
             </a>
         </div>
+        <script>
+            function confirmLogout() {
+                return confirm("Are you sure you want to log out?");
+            }
+        </script>
 
     </div>
 </aside>

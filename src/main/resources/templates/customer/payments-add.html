@@ -1,3 +1,138 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8"/>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">-->
+<!--    <link rel="icon" type="image/png" href="../assets/img/favicon.png">-->
+<!--    <title>Add a new payment</title>-->
+
+<!--    &lt;!&ndash;     Fonts and icons     &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>-->
+<!--    &lt;!&ndash; Nucleo Icons &ndash;&gt;-->
+<!--    <link href="../assets/css/nucleo-icons.css" rel="stylesheet"/>-->
+<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>-->
+<!--    &lt;!&ndash; Font Awesome Icons &ndash;&gt;-->
+<!--    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>-->
+<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet"/>-->
+<!--    &lt;!&ndash; CSS Files &ndash;&gt;-->
+<!--    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet"/>-->
+
+<!--    &lt;!&ndash; &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="../css/section-add.css">-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<section class="min-vh-100">-->
+<!--    <div class="row m-2 pt-2">-->
+
+<!--        <div class="col-xl-5 col-lg-6 col-md-7 mx-auto m-3">-->
+
+<!--            <div class="card z-index-0">-->
+<!--                <h1 class="p-3 pb-0 pt-3 display-3 text-center text-primary">Payment</h1>-->
+<!--&lt;!&ndash;                <h1 class="p-3 pb-0 pt-3 display-3 text-center text-primary">Customer Group Payment</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                <h5 class="lead text-center">Add customer-payment details</h5>&ndash;&gt;-->
+
+<!--                <h3 class="text-center text-light px-4 pt-5">Add payment-details</h3>-->
+
+
+<!--                <div class="card-body">-->
+<!--                    <form method="POST" th:object="${customerGroupPaymentDTO}">-->
+<!--&lt;!&ndash;                        <input type="hidden"&ndash;&gt;-->
+<!--&lt;!&ndash;                               th:name="${_csrf.parameterName}"&ndash;&gt;-->
+<!--&lt;!&ndash;                               th:value="${_csrf.token}" />&ndash;&gt;-->
+
+<!--                        <div class="row mb-3">-->
+<!--                            <label class="col-sm-6 col-form-label">Date and time of payment</label>-->
+<!--                            <div class="col-sm-6">-->
+<!--                                <input type="datetime-local"-->
+<!--                                       th:field="*{paymentDateTime}"-->
+<!--                                       class="form-control">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row mb-3">-->
+<!--                            <label class="col-sm-6 col-form-label">Amount</label>-->
+<!--                            <div class="col-sm-6">-->
+<!--                                <input type="number"-->
+<!--                                       th:field="*{paymentAmount}"-->
+<!--                                       class="form-control">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row mb-5">-->
+<!--                            <label class="col-sm-6 col-form-label">Transaction Type</label>-->
+<!--                            <div class="col-sm-6">-->
+<!--                                <select class="form-control"-->
+<!--                                        th:field="*{paymentTransactionType}">-->
+<!--&lt;!&ndash;                                        style="max-width:250px;">&ndash;&gt;-->
+<!--                                    <option value="Cash">Cash</option>-->
+<!--                                    <option value="Debit/Credit">Credit/Debit Card</option>-->
+<!--                                    <option value="Mobile Wallet">Apple Pay</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+
+<!--&lt;!&ndash;                        <label> Payment Information</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="mb-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <label class="form-label">Payment Date and Time</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="datetime-local" th:field="*{paymentDateTime}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                   class="form-control" placeholder="Payment Date and Time" aria-label="Date and Time"&ndash;&gt;-->
+<!--&lt;!&ndash;                                   >&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="mb-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <label class="form-label">Payment Amount</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <input type="number" th:field="*{paymentAmount}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                   class="form-control" placeholder="Payment Amount" aria-label="Payment Amount"&ndash;&gt;-->
+<!--&lt;!&ndash;                                  >&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="row mb-3">- &ndash;&gt;-->
+<!--&lt;!&ndash;                            <label class="form-label">Payment Transaction Type</label>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <div class="col-sm-8">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <select class="form-select" th:field="*{paymentTransactionType}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                        style="max-width:250px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Cash">Cash</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Debit/Credit">Credit/Debit Card</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <option value="Mobile Wallet">Apple Pay</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </select>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                        <div class="text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <button type="submit" class="btn btn-primary">&ndash;&gt;-->
+<!--&lt;!&ndash;                                Add Payment&ndash;&gt;-->
+<!--&lt;!&ndash;                            </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="/payments/list" class="btn btn-outline-primary">Cancel</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+
+<!--                        &lt;!&ndash; buttons &ndash;&gt;-->
+<!--                        <div class="row mb-2">-->
+<!--                            <div class="col-sm-6 d-grid">-->
+<!--                                <button type="submit" class="btn btn-primary">Add Payment-details</button>-->
+<!--                            </div>-->
+
+<!--                            <div class="col-sm-6 d-grid">-->
+<!--                                <a class="btn btn-outline-primary" href="/reservations/list">Cancel</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!-- newer -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
@@ -31,8 +166,8 @@
 
             <div class="card z-index-0">
                 <h1 class="p-3 pb-0 pt-3 display-3 text-center text-primary">Payment</h1>
-<!--                <h1 class="p-3 pb-0 pt-3 display-3 text-center text-primary">Customer Group Payment</h1>-->
-<!--                <h5 class="lead text-center">Add customer-payment details</h5>-->
+                <!--                <h1 class="p-3 pb-0 pt-3 display-3 text-center text-primary">Customer Group Payment</h1>-->
+                <!--                <h5 class="lead text-center">Add customer-payment details</h5>-->
 
                 <h3 class="text-center text-light px-4 pt-5">Add payment-details</h3>
 
@@ -46,18 +181,31 @@
                         <div class="row mb-3">
                             <label class="col-sm-6 col-form-label">Date and time of payment</label>
                             <div class="col-sm-6">
-                                <input type="datetime-local"
-                                       th:field="*{paymentDateTime}"
-                                       class="form-control">
+                                <input type="datetime-local" class="form-control"
+                                       th:value="${#temporals.format(customerGroupPaymentDTO.paymentDateTime, 'yyyy-MM-dd') + 'T' + #temporals.format(customerGroupPaymentDTO.paymentDateTime, 'HH:mm')}"
+                                       name="paymentDateTime"
+                                       th:classappend="${#fields.hasErrors('paymentDateTime')} ? 'is-invalid' : ''" >
+
+                                <div class="invalid-feedback"
+                                     th:if="${#fields.hasErrors('paymentDateTime')}"
+                                     th:errors="*{paymentDateTime}">
+                                </div>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label class="col-sm-6 col-form-label">Amount</label>
                             <div class="col-sm-6">
-                                <input type="number"
+                                <input type="number"  class="form-control"
                                        th:field="*{paymentAmount}"
-                                       class="form-control">
+
+                                       th:classappend="${#fields.hasErrors('paymentAmount')} ? 'is-invalid' : ''" >
+
+
+                                <div class="invalid-feedback"
+                                     th:if="${#fields.hasErrors('paymentAmount')}"
+                                     th:errors="*{paymentAmount}"></div>
+
                             </div>
                         </div>
 
@@ -65,50 +213,55 @@
                             <label class="col-sm-6 col-form-label">Transaction Type</label>
                             <div class="col-sm-6">
                                 <select class="form-control"
-                                        th:field="*{paymentTransactionType}">
-<!--                                        style="max-width:250px;">-->
+                                        th:field="*{paymentTransactionType}"
+                                        th:classappend="${#fields.hasErrors('paymentTransactionType')} ? 'is-invalid' : ''" >
+                                    <!--                                        style="max-width:250px;">-->
                                     <option value="Cash">Cash</option>
                                     <option value="Debit/Credit">Credit/Debit Card</option>
-                                    <option value="Mobile Wallet">Apple Pay</option>
+<!--                                    <option value="Mobile Wallet">Apple Pay</option>-->
+                                    <option value="Apple Pay">Apple Pay</option>
                                 </select>
+                                <div class="invalid-feedback"
+                                     th:if="${#fields.hasErrors('paymentTransactionType')}"
+                                     th:errors="*{paymentTransactionType}"></div>
                             </div>
                         </div>
 
 
-<!--                        <label> Payment Information</label>-->
-<!--                        <div class="mb-2">-->
-<!--                            <label class="form-label">Payment Date and Time</label>-->
-<!--                            <input type="datetime-local" th:field="*{paymentDateTime}"-->
-<!--                                   class="form-control" placeholder="Payment Date and Time" aria-label="Date and Time"-->
-<!--                                   >-->
-<!--                        </div>-->
-<!--                        <div class="mb-2">-->
-<!--                            <label class="form-label">Payment Amount</label>-->
-<!--                            <input type="number" th:field="*{paymentAmount}"-->
-<!--                                   class="form-control" placeholder="Payment Amount" aria-label="Payment Amount"-->
-<!--                                  >-->
-<!--                        </div>-->
-<!--                        <div class="row mb-3">- -->
-<!--                            <label class="form-label">Payment Transaction Type</label>-->
+                        <!--                        <label> Payment Information</label>-->
+                        <!--                        <div class="mb-2">-->
+                        <!--                            <label class="form-label">Payment Date and Time</label>-->
+                        <!--                            <input type="datetime-local" th:field="*{paymentDateTime}"-->
+                        <!--                                   class="form-control" placeholder="Payment Date and Time" aria-label="Date and Time"-->
+                        <!--                                   >-->
+                        <!--                        </div>-->
+                        <!--                        <div class="mb-2">-->
+                        <!--                            <label class="form-label">Payment Amount</label>-->
+                        <!--                            <input type="number" th:field="*{paymentAmount}"-->
+                        <!--                                   class="form-control" placeholder="Payment Amount" aria-label="Payment Amount"-->
+                        <!--                                  >-->
+                        <!--                        </div>-->
+                        <!--                        <div class="row mb-3">- -->
+                        <!--                            <label class="form-label">Payment Transaction Type</label>-->
 
-<!--                            <div class="col-sm-8">-->
-<!--                                <select class="form-select" th:field="*{paymentTransactionType}"-->
-<!--                                        style="max-width:250px;">-->
-<!--                                    <option value="Cash">Cash</option>-->
-<!--                                    <option value="Debit/Credit">Credit/Debit Card</option>-->
-<!--                                    <option value="Mobile Wallet">Apple Pay</option>-->
-<!--                                </select>-->
+                        <!--                            <div class="col-sm-8">-->
+                        <!--                                <select class="form-select" th:field="*{paymentTransactionType}"-->
+                        <!--                                        style="max-width:250px;">-->
+                        <!--                                    <option value="Cash">Cash</option>-->
+                        <!--                                    <option value="Debit/Credit">Credit/Debit Card</option>-->
+                        <!--                                    <option value="Mobile Wallet">Apple Pay</option>-->
+                        <!--                                </select>-->
 
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
 
-<!--                        <div class="text-center">-->
-<!--                            <button type="submit" class="btn btn-primary">-->
-<!--                                Add Payment-->
-<!--                            </button>-->
-<!--                            <a href="/payments/list" class="btn btn-outline-primary">Cancel</a>-->
-<!--                        </div>-->
+                        <!--                        <div class="text-center">-->
+                        <!--                            <button type="submit" class="btn btn-primary">-->
+                        <!--                                Add Payment-->
+                        <!--                            </button>-->
+                        <!--                            <a href="/payments/list" class="btn btn-outline-primary">Cancel</a>-->
+                        <!--                        </div>-->
 
                         <!-- buttons -->
                         <div class="row mb-2">
