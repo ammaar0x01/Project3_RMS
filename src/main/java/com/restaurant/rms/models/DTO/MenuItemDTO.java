@@ -5,20 +5,20 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 public class MenuItemDTO {
-    @NotEmpty(message = "Menu item name cannot be empty")
+//    @NotEmpty(message = "Menu item name cannot be empty")
     private String menuItemName;
 
-    @NotEmpty(message = "Menu item number cannot be empty")
+//    @NotEmpty(message = "Menu item number cannot be empty")
     private String menuItemNum;
 
-    @NotNull(message = "Menu item price cannot be empty")
+//    @NotNull(message = "Menu item price cannot be empty")
     @Positive(message = "Menu item price cannot be negative")
     private double menuItemPrice;
 
-    @NotEmpty(message = "Menu item category cannot be empty")
+//    @NotEmpty(message = "Menu item category cannot be empty")
     private String menuItemCategory;
 
-    @NotNull(message = "Menu item estimated serve time cannot be empty")
+//    @NotNull(message = "Menu item estimated serve time cannot be empty")
     private int menuItemEstServeTime;
 
 

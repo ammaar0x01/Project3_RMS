@@ -2,8 +2,7 @@
 
 **Description**
 > A web-app for managing a restaurant 
-
-<br>
+---
 
 - Started	18.04.25
 - Updated: 	06.10.25
@@ -82,12 +81,5 @@ Download the zipped folder
 - spring-boot-starter-test ?
 ``` 
 <a href="./pom.xml">View dependencies from POM file</a>
-
----
-
-
-#### Screenshots
-![sshot1.png](screenshots%2Fsshot1.png)
-![sshot2.png](screenshots%2Fsshot2.png)
-![sshot3.png](screenshots%2Fsshot3.png)
+<br>
 ---

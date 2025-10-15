@@ -35,7 +35,7 @@
               <h3 class="text-center text-light px-4 pt-5">Add expense-details</h3>
 
             <div class="card-body">
-              <form role="form text-left" method="POST" th:object="${expenseDTO}">
+              <form role="form text-left" method="POST" th:object="${expenseDTO}" id="expenseForm">
 <!--                  <input type="hidden"-->
 <!--                         th:name="${_csrf.parameterName}"-->
 <!--                         th:value="${_csrf.token}" />-->
@@ -46,6 +46,9 @@
                                 <input type="text"
                                        th:field="*{expenseName}"
                                        class="form-control">
+<!--                                <div class="invalid-feedback"-->
+<!--                                     th:if="${#fields.hasErrors('expenseName')}"-->
+<!--                                     th:errors="*{expenseName}"></div>-->
                             </div>
                         </div>
 
@@ -150,5 +153,19 @@
   </section>
 
 </body>
+
+<script>
+    document.getElementById("expenseForm").addEventListener("submit", function(event) {
+      const expenseName = document.querySelector('[name="expenseName"]').value.trim();
+      const expenseDate = document.querySelector('[name="expenseDate"]').value;
+      const expenseAmount = document.querySelector('[name="expenseAmount"]').value;
+
+      if (!expenseName || !expenseDate || !expenseAmount) {
+        alert("Please fill in all the required fields: Name, Date, and Amount.");
+        event.preventDefault(); // Prevent form from submitting
+      }
+    });
+</script>
+
 
 </html>

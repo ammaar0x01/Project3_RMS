@@ -1,23 +1,33 @@
 package com.restaurant.rms.models.DTO;
 
-//import jakarta.validation.constraints.Min;
-//import jakarta.validation.constraints.NotEmpty;
-//import org.springframework.web.multipart.MultipartFile;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
 public class ExpenseDTO {
+    private int id;
+
+
 //    @NotEmpty(message = "The Expense name is required")
     private String expenseName;
 
-//    @NotEmpty(message = "The Expense Date is required")
+//    @NotNull(message = "The Expense Date is required")
     private LocalDateTime expenseDate;
 
 //    @Min(0)
     private Double expenseAmount;
-
-//    private MultipartFile imageFile;
     // -----------------------------
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getExpenseName() {
         return expenseName;

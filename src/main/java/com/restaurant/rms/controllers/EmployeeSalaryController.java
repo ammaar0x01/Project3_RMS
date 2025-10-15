@@ -72,13 +72,23 @@ public class EmployeeSalaryController {
             return "salary/salaries-add";
         }
 
-        Employee employee = new Employee(
-                "first_name",
-                "last_name",
-                new Date(),
-                "manager"
-        );
-//        EmployeeRepo employeeRepo;
+//        Employee employee = new Employee(
+//                "Fred",
+//                "Aimes",
+//                new Date(),
+//                "manager",
+//                "000 000 000",
+//                "fredaimas@gmail.com"
+//        );
+//        Employee employee = new Employee(
+//                "first_name",
+//                "last_name",
+//                new Date(),
+//                "manager"
+//        );
+
+        Employee employee = employeeRepo.findById(101).get();
+
         System.out.println("Employee: " + employee);
         employeeRepo.save(employee);
 

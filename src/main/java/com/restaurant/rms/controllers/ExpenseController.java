@@ -1,6 +1,8 @@
 package com.restaurant.rms.controllers;
 
+import com.restaurant.rms.models.DTO.EmployeeSalaryDTO;
 import com.restaurant.rms.models.DTO.ExpenseDTO;
+import com.restaurant.rms.models.EmployeeSalary;
 import com.restaurant.rms.models.Expense;
 import com.restaurant.rms.repository.ExpenseRepo;
 import jakarta.validation.Valid;
@@ -13,15 +15,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 //import services.ExpensesRepo;
 
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 @Controller
 @RequestMapping("/expenses")
 public class ExpenseController {
     @Autowired
-    private ExpenseRepo ExpensesRepo;
+    private ExpenseRepo expenseRepo;
     // -----------------------------
 
     // READ //
@@ -29,7 +29,7 @@ public class ExpenseController {
     public String showExpenses(Model model) {
         System.out.println("\nEmployee-expense. get all");
 
-        List<Expense> expenses = ExpensesRepo.findAll();
+        List<Expense> expenses = expenseRepo.findAll();
 
         for(Expense e : expenses){
             System.out.println("- " + e);
@@ -60,39 +60,60 @@ public class ExpenseController {
 //            return "Expenses/createExpense";
         }
 
+        System.out.println("\nDTO values received:");
+        System.out.println("Name: " + expensesDTO.getExpenseName());
+        System.out.println("Amount: " + expensesDTO.getExpenseAmount());
+        System.out.println("Date: " + expensesDTO.getExpenseDate());
+
+
+//        Expense expense = new Expense();
+//        expense.setExpenseName(expensesDTO.getExpenseName());
+
 //        Date date = new Date();
-        Expense Expense = new Expense();
-        Expense.setExpenseName(expensesDTO.getExpenseName());
-//        Expense.setExpenseDate(date.toString());
-        Expense.setExpenseDate(LocalDateTime.now());
-        Expense.setExpenseAmount(expensesDTO.getExpenseAmount());
+//
+////        Expense.setExpenseDate(date.toString());
+////        Expense.setExpenseDate(LocalDateTime.now());
+//        expense.setExpenseDate(expensesDTO.getExpenseDate());
+//
+//        expense.setExpenseAmount(expensesDTO.getExpenseAmount());
+
+
+
+        Expense expense = new Expense(
+                expensesDTO.getExpenseName(),
+                expensesDTO.getExpenseDate(),
+                expensesDTO.getExpenseAmount()
+        );
+
 
         System.out.println("\nRecord:");
-        System.out.println(Expense);
-        ExpensesRepo.save(Expense);
+        System.out.println(expense);
+        expenseRepo.save(expense);
         return "redirect:/expenses";
     }
 
     // EDIT //
     @GetMapping("/edit")
-    public String showEditPage(Model model, @RequestParam int id) {
+    public String showEditPage(
+            Model model,
+            @RequestParam int id
+    ) {
         System.out.println("Employee-expense. edit page. get");
 
         try {
-            Expense Expense = ExpensesRepo.findById(id).get();
-
-            Date date = new Date();
+            Expense expense = expenseRepo.findById(id).get();
             ExpenseDTO expenseDTO = new ExpenseDTO();
 
-            Expense.setExpenseName(expenseDTO.getExpenseName());
+            expenseDTO.setExpenseName(expense.getExpenseName());
+//            Date date = new Date();
 //            Expense.setExpenseDate(LocalDateTime.now());
 //            Expense.setExpenseDate(date.toString());
-            Expense.setExpenseAmount(expenseDTO.getExpenseAmount());
-            Expense.setExpenseDate(expenseDTO.getExpenseDate());
 
-            model.addAttribute("Expense", Expense);
+            expenseDTO.setExpenseAmount(expense.getExpenseAmount());
+            expenseDTO.setExpenseDate(expense.getExpenseDate());
+
+//            model.addAttribute("Expense", expense);
             model.addAttribute("expenseDTO", expenseDTO);
-            return "expense/expenses-edit";
         }
         catch (Exception ex) {
             System.out.println("Exception: " + ex.getMessage());
@@ -100,35 +121,147 @@ public class ExpenseController {
 //            return "redirect:/Expenses";
 
         }
+        return "expense/expenses-edit";
+
     }
+//    @PostMapping("/edit")
+//    public String updateExpense(
+//            Model model,
+//            @RequestParam int id,
+//            @Valid @ModelAttribute ExpenseDTO expenseDTO,
+//            BindingResult result
+//    ) {
+//        System.out.println("Employee-expense. edit page. post");
+//
+//        try {
+//            Expense expense = expenseRepo.findById(id).get();
+//            model.addAttribute("expenseDTO", expense);
+////            model.addAttribute("Expense", expense);
+//
+//            if (result.hasErrors()) {
+//                return "expense/expenses-edit";
+//            }
+//
+//            System.out.println("\nCurrent object:");
+//            System.out.println(expense);
+//
+//            System.out.println("\nDTO data");
+//            System.out.println(expenseDTO.getExpenseName());
+//            System.out.println(expenseDTO.getExpenseAmount());
+//            System.out.println(expenseDTO.getExpenseDate());
+//
+//            expense.setExpenseName(expenseDTO.getExpenseName());
+//            expense.setExpenseAmount(expenseDTO.getExpenseAmount());
+//            expense.setExpenseDate(expenseDTO.getExpenseDate());
+//
+//            System.out.println(expense);
+//            expenseRepo.save(expense);
+//            System.out.println("\n***updated (expense)");
+//
+//        }
+//        catch (Exception ex) {
+//            System.out.println("Exception: " + ex.getMessage());
+//        }
+//        return "redirect:/expenses";
+//    }
+
+
+
+    // newer //
+//    @PostMapping("/edit")
+//    public String updateExpense(
+//            Model model,
+//            @Valid @ModelAttribute ExpenseDTO expenseDTO,
+//            BindingResult result
+//    ) {
+//        System.out.println("Employee-expense. edit page. post");
+//
+//        if (result.hasErrors()) {
+//            return "expense/expenses-edit";
+//        }
+//
+//        try {
+//            Expense expense = expenseRepo.findById(expenseDTO.getId()).get();
+//
+//
+//            System.out.println("\nCurrent object:");
+//            System.out.println(expense);
+//
+//            System.out.println("\nDTO data");
+//            System.out.println(expenseDTO.getExpenseName());
+//            System.out.println(expenseDTO.getExpenseAmount());
+//            System.out.println(expenseDTO.getExpenseDate());
+//
+//            expense.setExpenseName(expenseDTO.getExpenseName());
+//            expense.setExpenseAmount(expenseDTO.getExpenseAmount());
+//            expense.setExpenseDate(expenseDTO.getExpenseDate());
+//
+//            expenseRepo.save(expense);
+//            System.out.println("Expense: \n" + expense);
+//            System.out.println("*** Expense updated ***");
+//        } catch (Exception ex) {
+//            System.out.println("Exception: " + ex.getMessage());
+//        }
+//
+//        return "redirect:/expenses";
+//    }
+
+
+    // copy paste //
     @PostMapping("/edit")
-    public String updateExpense(
+    public String editRecord(
             Model model,
             @RequestParam int id,
-            @Valid @ModelAttribute
-            ExpenseDTO expenseDTO,
-            BindingResult result
+            @Valid @ModelAttribute ExpenseDTO expenseDTO,
+//            @Valid @ModelAttribute("salaryDTO") EmployeeSalaryDTO employeeSalaryDTO,
+            BindingResult bindingResult
     ) {
-        System.out.println("Employee-expense. edit page. post");
+        System.out.println("\n***Expense (EDIT) Putting...");
 
         try {
-            Expense expense = ExpensesRepo.findById(id).get();
-            model.addAttribute("Expense", expense);
-
-            if (result.hasErrors()) {
+            Expense expense = expenseRepo.findById(expenseDTO.getId()).get();
+            model.addAttribute("expenseDTO", expense);
+//            model.addAttribute("expenseDTO", expense);
+////            model.addAttribute("Expense", expense);
+            if (bindingResult.hasErrors()) {
                 return "expense/expenses-edit";
             }
+
+            System.out.println("\nCurrent object:");
+            System.out.println(expense);
+
+            System.out.println("\nDTO data");
+            System.out.println(expenseDTO.getExpenseName());
+            System.out.println(expenseDTO.getExpenseAmount());
+            System.out.println(expenseDTO.getExpenseDate());
+
             expense.setExpenseName(expenseDTO.getExpenseName());
             expense.setExpenseAmount(expenseDTO.getExpenseAmount());
             expense.setExpenseDate(expenseDTO.getExpenseDate());
 
-            System.out.println("\n***updated (expense)");
-            System.out.println(expense);
-            ExpensesRepo.save(expense);
+            expenseRepo.save(expense);
+            System.out.println("Expense: \n" + expense);
+            System.out.println("*** Expense updated ***");
+
+
+//            EmployeeSalary employeeSalary = salaryRepo.findById(id).get();
+////            EmployeeSalary employeeSalary = salaryRepo.findById(id).orElse(null);
+//            model.addAttribute("employeeSalaryDTO", employeeSalary);
+//
+//            if (bindingResult.hasErrors()) {
+//                return "salary/salaries-edit";
+//            }
+//            employeeSalary.setLastPayment(employeeSalaryDTO.getLastPayment());
+//            employeeSalary.setEmployeePaymentMethod(employeeSalaryDTO.getMethod());
+//            employeeSalary.setEmployeePaymentAmount(employeeSalaryDTO.getAmount());
+//
+//            salaryRepo.save(employeeSalary);
+//            System.out.println("\n***Updated employee-salary successfully");
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
-        catch (Exception ex) {
-            System.out.println("Exception: " + ex.getMessage());
-        }
+
         return "redirect:/expenses";
     }
+
 }

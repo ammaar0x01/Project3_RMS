@@ -17,6 +17,14 @@ public class Expense {
     private LocalDateTime expenseDate;
     private Double expenseAmount;
 
+    public Expense(){}
+    public Expense(String expenseName, LocalDateTime expenseDate, Double expenseAmount) {
+        this.expenseName = expenseName;
+        this.expenseDate = expenseDate;
+        this.expenseAmount = expenseAmount;
+    }
+    // ----------------------------------------------
+
     public int getId() {
         return id;
     }
