@@ -687,6 +687,8 @@
                                 <div class="invalid-feedback" th:if="${#fields.hasErrors('reservationTimeEnd')}"
                                      th:errors="*{reservationTimeEnd}"></div>
                             </div>
+                        </div>
+
                             <hr class="mb-4">
 
                             <!--                ---->
@@ -710,9 +712,10 @@
                             <!--                </div>-->
 
                             <p class="mb-3 fw-bold">Table information</p>
-                            <!--                <label>Table information</label>-->
                             <div class="row mb-3">
-                                <label class="col-sm-5 col-form-label">Table Number</label>
+                                <label class="col-sm-5 col-form-label">Table number</label>
+
+<!--                                <label class="form-label">Table Number</label>-->
                                 <div class="col-sm-7">
                                     <select th:field="*{tableId}" class="form-control" required>
                                         <option value="" disabled>Select Table</option>

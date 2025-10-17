@@ -1,5 +1,127 @@
+<!--<!DOCTYPE html>-->
+<!--&lt;!&ndash;<html xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+
+<!--<head>-->
+<!--    <meta charset="utf-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">-->
+<!--    <link rel="icon" type="image/png" href="../assets/img/favicon.png">-->
+<!--    <title>Login</title>-->
+
+
+<!--    &lt;!&ndash; -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+<!--    &lt;!&ndash; for testing &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Fonts and icons &ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Nucleo Icons &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="../static/assets/css/nucleo-icons.css" rel="stylesheet" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="../static/assets/css/nucleo-svg.css" rel="stylesheet" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Font Awesome Icons &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; CSS Files &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link id="pagestyle" href="../static/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; STYLES  &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/css/main.css" />&ndash;&gt;-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="../static/css/section-edit.css">&ndash;&gt;-->
+
+<!--    &lt;!&ndash; -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; &ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; Fonts and icons &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />-->
+<!--    &lt;!&ndash; Nucleo Icons &ndash;&gt;-->
+<!--    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />-->
+<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />-->
+<!--    &lt;!&ndash; Font Awesome Icons &ndash;&gt;-->
+<!--    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>-->
+<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />-->
+<!--    &lt;!&ndash; CSS Files &ndash;&gt;-->
+<!--    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />-->
+
+<!--    &lt;!&ndash; STYLES  &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="../css/main.css" />-->
+<!--    <link rel="stylesheet" href="../css/section-edit.css">-->
+
+<!--    <style>-->
+<!--        main .inner-div {-->
+<!--            height: fit-content;-->
+<!--            width: 100%;-->
+<!--        }-->
+<!--    </style>-->
+
+<!--</head>-->
+
+<!--<body>-->
+<!--    <section class="min-vh-100 center">-->
+<!--        <div class="col-10 col-md-6">-->
+<!--            <div class="card inner-div">-->
+<!--                <h3 class="text-center text-light px-4 pt-5">Register</h3>-->
+
+<!--                &lt;!&ndash; <h1>Register</h1>-->
+<!--    <form action="/register" method="post">-->
+<!--        Username: <input type="text" name="username" /><br/>-->
+<!--        Password: <input type="password" name="password" /><br/>-->
+<!--        <button type="submit">Register</button>-->
+<!--    </form> &ndash;&gt;-->
+
+
+<!--                <div class="card-body">-->
+<!--                    <form method="POST" action="/register">-->
+<!--                        <div class="row mb-3">-->
+<!--                            <div class="col">-->
+<!--                                <input type="text"-->
+<!--                                       name="username"-->
+<!--                                       class="form-control text-center"-->
+<!--                                       placeholder="Username">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row mb-3">-->
+<!--                            <div class="col">-->
+<!--                                <input type="password"-->
+<!--                                       name="password"-->
+<!--                                       class="form-control text-center"-->
+<!--                                       placeholder="Password">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row mb-3">-->
+<!--                            <div class="col">-->
+<!--                                <input type="password"-->
+<!--                                       name="password-confirm"-->
+<!--                                       class="form-control text-center"-->
+<!--                                       placeholder="Confirm password">-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="mb-1 button-section">-->
+<!--                            <a class="w-100">-->
+<!--                                <button type="submit" class="btn btn-primary w-100">Register</button>-->
+<!--                            </a>-->
+
+<!--                            <a href="/login" class="text-center">I have an account already</a>-->
+<!--                        </div>-->
+<!--                    </form>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+<!--</body>-->
+
+<!--</html>-->
+
+
+<!--NEWER -->
 <!DOCTYPE html>
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -9,43 +131,14 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <title>Login</title>
 
-
-    <!-- ------------------------------- -->
-    <!-- for testing -->
-
-    <!-- Fonts and icons -->
-<!--    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />-->
-
-<!--    &lt;!&ndash; Nucleo Icons &ndash;&gt;-->
-<!--    <link href="../static/assets/css/nucleo-icons.css" rel="stylesheet" />-->
-<!--    <link href="../static/assets/css/nucleo-svg.css" rel="stylesheet" />-->
-
-<!--    &lt;!&ndash; Font Awesome Icons &ndash;&gt;-->
-<!--    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>-->
-<!--    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />-->
-
-<!--    &lt;!&ndash; CSS Files &ndash;&gt;-->
-<!--    <link id="pagestyle" href="../static/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />-->
-
-<!--    &lt;!&ndash; STYLES  &ndash;&gt;-->
-<!--    <link rel="stylesheet" href="../static/css/main.css" />-->
-<!--    <link rel="stylesheet" href="../static/css/section-edit.css">-->
-
-    <!-- ------------------------------- -->
-
-
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-    <!-- Nucleo Icons -->
     <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-    <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 
-    <!-- STYLES  -->
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/section-edit.css">
 
@@ -55,63 +148,83 @@
             width: 100%;
         }
     </style>
-
 </head>
 
 <body>
-    <section class="min-vh-100 center">
-        <div class="col-10 col-md-6">
-            <div class="card inner-div">
-                <h3 class="text-center text-light px-4 pt-5">Register</h3>
+<section class="min-vh-100 center">
+    <div class="col-10 col-md-6">
+        <div class="card inner-div">
+            <h3 class="text-center text-light px-4 pt-5">Register</h3>
 
-                <!-- <h1>Register</h1>
-    <form action="/register" method="post">
-        Username: <input type="text" name="username" /><br/>
-        Password: <input type="password" name="password" /><br/>
-        <button type="submit">Register</button>
-    </form> -->
-
-
-                <div class="card-body">
-                    <form method="POST" action="/register">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="text"
-                                       name="username"
-                                       class="form-control text-center"
-                                       placeholder="Username">
-                            </div>
+            <div class="card-body">
+                <form method="POST" action="/register" id="registerForm">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="text"
+                                   id="username"
+                                   name="username"
+                                   class="form-control text-center"
+                                   placeholder="Username">
                         </div>
+                    </div>
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <input type="password"
-                                       name="password"
-                                       class="form-control text-center"
-                                       placeholder="Password">
-                            </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-control text-center"
+                                   placeholder="Password">
                         </div>
+                    </div>
 
-                        <!-- <div class="row mb-3">
-                            <div class="col">
-                                <input type="password" class="form-control text-center" placeholder="Confirm password">
-                            </div>
-                        </div> -->
-
-                        <div class="mb-1 button-section">
-                            <a class="w-100">
-                                <button type="submit" class="btn btn-primary w-100">Register</button>
-                            </a>
-
-                            <a href="/login" class="text-center">I have an account already</a>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <input type="password"
+                                   id="passwordConfirm"
+                                   name="password-confirm"
+                                   class="form-control text-center"
+                                   placeholder="Confirm password">
                         </div>
-                    </form>
+                    </div>
 
-                </div>
+                    <div class="mb-1 button-section">
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                        <a href="/login" class="text-center d-block mt-2">I have an account already</a>
+                    </div>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+<!-- ✅ JavaScript validation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('registerForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('passwordConfirm');
+
+        form.addEventListener('submit', function (event) {
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (!username || !password || !confirmPassword) {
+                alert('All fields are required.');
+                event.preventDefault(); // Prevent form submission
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
+

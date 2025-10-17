@@ -341,11 +341,11 @@
                         </td>
 
                         <td>
-                            <p class="text-xs font-weight-bold mb-0" th:text="${order.estimatedWaitTime}"></p>
+                            <p class="text-xs font-weight-bold mb-0" th:text="${order.estimatedWaitTime + ' minutes'}"></p>
                         </td>
 
                         <td>
-                            <p class="text-xs font-weight-bold mb-0" th:text="${order.totalPrice}"></p>
+                            <p class="text-xs font-weight-bold mb-0" th:text="${'R ' + order.totalPrice}"></p>
                         </td>
 
                         <td>

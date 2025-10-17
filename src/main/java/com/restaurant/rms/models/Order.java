@@ -10,10 +10,8 @@ import jakarta.persistence.*;
 import jakarta.persistence.Table;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Entity
-//@Table(name="Orders")
 @Table(name="FoodOrder")
 public class Order {
     @Id
@@ -21,41 +19,12 @@ public class Order {
     private int id;
 
     private LocalDateTime orderTime;
-    // LocalDateTime now = LocalDateTime.now();
-
-//    private Datetime serveTime;
-    // rather change it? to...
-
     private double estimatedWaitTime;
     // calculate this in the back-end, instead of a user entering a value?
-
     private double totalPrice;
     private String status;
-//    private enum status;
-
-    // FK ------
-    // empId;
-    // tableId;
-    // paymentId;
-
-    // orderDetail?
-
-
-    // temp
-//       import java.time.LocalDateTime;
-//   import java.time.format.DateTimeFormatter;
-//
-//    public class DateTimeExample {
-//        public static void main(String[] args) {
-//            LocalDateTime now = LocalDateTime.now();
-//            System.out.println("Current DateTime: " + now);
-//
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//            String formattedDateTime = now.format(formatter);
-//            System.out.println("Formatted DateTime: " + formattedDateTime);
-//        }
-//    }
-
+    // private String orderDetails;
+    // private ArrayList<String> orderDetails;
 
     public Order(){}
     public Order(LocalDateTime orderTime, double estimatedWaitTime, double totalPrice, String status) {

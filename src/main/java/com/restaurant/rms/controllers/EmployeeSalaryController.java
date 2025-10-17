@@ -87,22 +87,23 @@ public class EmployeeSalaryController {
 //                "manager"
 //        );
 
-        Employee employee = employeeRepo.findById(101).get();
+//
 
-        System.out.println("Employee: " + employee);
-        employeeRepo.save(employee);
-
-//        EmployeeSalary salary = new EmployeeSalary(
-//                dto.getAmount(),
-//                dto.getMethod(),
-//                dto.getLastPayment()
-//        );
         EmployeeSalary salary = new EmployeeSalary(
                 dto.getAmount(),
                 dto.getMethod(),
-                dto.getLastPayment(),
-                employee
+                dto.getLastPayment()
         );
+
+//        Employee employee = employeeRepo.findById(101).get();
+//        System.out.println("Employee: " + employee);
+//        employeeRepo.save(employee);
+//        EmployeeSalary salary = new EmployeeSalary(
+//                dto.getAmount(),
+//                dto.getMethod(),
+//                dto.getLastPayment(),
+//                employee
+//        );
 
         System.out.println("\nRecord: " + salary);
         salaryRepo.save(salary);

@@ -894,7 +894,9 @@
 
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="mb-0 text-sm"
-                                                    th:text="*{reservation.getCustomerGroup().getFirstName()}"></h6>
+                                                        th:text="*{reservation.getCustomerGroup().getFirstName() + ' ' + reservation.getCustomerGroup().getLastName()}">
+                                                </h6>
+
 
                                             </div>
                                         </div>
